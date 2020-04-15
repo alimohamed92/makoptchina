@@ -46,12 +46,12 @@ class Auth extends CI_Controller
 						$this->session->set_userdata('log_donneur',true);
 					    redirect(site_url('donneur/accueil'));
 					}
-					else if( $res['fonction'] == ADMIN ){
+					else if( $res['fonction'] == ADMIN){
 						
 						$this->session->set_userdata('log_admin',true);
 						$this->session->set_userdata('nbUser',$this->user->getNbTotalUser());
-						$this->session->set_userdata('nbEtudiant',$this->user->getNbReceveur());
-						$this->session->set_userdata('nbEns',$this->user->getNbDonneur());
+						$this->session->set_userdata('nbReceveur',$this->user->getNbReceveur());
+						$this->session->set_userdata('nbDonneur',$this->user->getNbDonneur());
 						$this->session->set_userdata('nbAdmin',$this->user->getNbAdmin());
 					    redirect(site_url('admin/'));
 					}
