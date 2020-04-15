@@ -1,0 +1,6 @@
+.nav-link.active{
+    color:black !important;
+}
+li > a {
+    color: white !important;;
+}
