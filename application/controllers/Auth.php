@@ -23,7 +23,7 @@ class Auth extends CI_Controller
 			redirect(site_url('receveur/accueil'));
 		}
 		elseif ( $this->session->userdata('log_donneur')) {
-			redirect(site_url('donneur/accueil'));
+			redirect(site_url('donneur/'));
 		}
 		elseif ( $this->session->userdata('log_admin')) {
 			redirect(site_url('admin'));
@@ -37,16 +37,17 @@ class Auth extends CI_Controller
 				//var_dump($res);
 				if($res['error']==0){
 					$this->session->set_userdata('log_user',true);
-					$this->session->set_userdata('tel',$res['tel']);
+					//$this->session->set_userdata('tel',$res['tel']);
+					$this->session->set_userdata('userInfo', $this->user->getUserInfoByTel($res['tel']));
 					if($res['type'] == USER_R ){
 						$this->session->set_userdata('log_receveur',true);
-					    redirect(site_url('receveur/accueil'));
+					    redirect(site_url('receveur/'));
 					}
-					else if($res['fonction'] == USER_D){
+					else if($res['type'] == USER_D){
 						$this->session->set_userdata('log_donneur',true);
-					    redirect(site_url('donneur/accueil'));
+					    redirect(site_url('donneur/'));
 					}
-					else if( $res['fonction'] == ADMIN){
+					else if( $res['type'] == ADMIN){
 						
 						$this->session->set_userdata('log_admin',true);
 						$this->session->set_userdata('nbUser',$this->user->getNbTotalUser());

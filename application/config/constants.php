@@ -84,6 +84,17 @@ defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
+// application const
 define('ADMIN', 1);
 define('USER_D', 2);
 define('USER_R', 3);
+define('EN_ATTENTE', 1);
+
+//data base tables
+define('TAB_USER', 'user');
+define('TAB_QUARTIER', 'quartier');
+define('TAB_DEMANDE', 'demande');
+define('TAB_ARTICLE', 'article');
+define('TAB_CATALOGUE', 'catalogue');
+define('TAB_VILLE', 'ville');
+define('TAB_USER_LINK', 'user_has_user');

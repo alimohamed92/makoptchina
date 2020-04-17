@@ -8137,14 +8137,14 @@ body {
   font-size: 14px;
   line-height: 1.8;
   font-weight: normal;
-  background: #fafafa;
+  background: #eff9f6;
   color: gray; }
 
 a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
-  color: #3e64ff; }
+  color: #0b6868; }
   a:hover, a:focus {
     text-decoration: none !important;
     outline: none !important;
@@ -8215,7 +8215,7 @@ h1, h2, h3, h4, h5,
 #sidebar {
   min-width: 270px;
   max-width: 270px;
-  background: #3e64ff;
+  background: #0b6868;
   color: #fff;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -8320,8 +8320,8 @@ a[data-toggle="collapse"] {
   transition: all 0.3s; }
 
 .btn.btn-primary {
-  background: #3e64ff;
-  border-color: #3e64ff; }
+  background: #0b6868;
+  border-color: #0b6868; }
   .btn.btn-primary:hover, .btn.btn-primary:focus {
-    background: #3e64ff !important;
-    border-color: #3e64ff !important; }
+    background: #0b6868 !important;
+    border-color: #0b6868 !important; }
