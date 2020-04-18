@@ -37,8 +37,9 @@ class Auth extends CI_Controller
 				//var_dump($res);
 				if($res['error']==0){
 					$this->session->set_userdata('log_user',true);
-					//$this->session->set_userdata('tel',$res['tel']);
-					$this->session->set_userdata('userInfo', $this->user->getUserInfoByTel($res['tel']));
+					$info = $this->user->getUserInfoByTel($res['tel']);
+					$this->session->set_userdata('userInfo', $info);
+					$this->session->set_userdata('referent',$this->user->getAdminQuartier($info['id_quartier']));
 					if($res['type'] == USER_R ){
 						$this->session->set_userdata('log_receveur',true);
 					    redirect(site_url('receveur/'));

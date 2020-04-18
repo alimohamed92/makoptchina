@@ -105,6 +105,42 @@ class Model_user extends CI_Model
         return sizeof($res) > 0 ? $res : null;
     }
 
+    public function getDemandeursParQuartier($idq){
+        $res = $this->db->select('d.label, d.date, u.tel, q.nom as quartier, v.nom as ville')
+        ->from(TAB_USER.' u, '.TAB_DEMANDE.' d,'.TAB_QUARTIER.' q, '.TAB_VILLE.' v')
+        ->where('d.user_tel = u.tel')
+        ->where('u.id_quartier = q.id_quartier')
+        ->where('q.id_ville = v.id_ville')
+        ->where('u.id_quartier', $idq)
+        ->get()
+        ->result_array();
+        return sizeof($res) > 0 ? $res : null;
+    }
+
+    public function getAdminVille($idVille){
+        $res = $this->db->select('u.tel, q.nom as quartier, v.nom as ville')
+        ->from(TAB_USER.' u, '.TAB_QUARTIER.' q, '.TAB_VILLE.' v')
+        ->where('u.id_quartier = q.id_quartier')
+        ->where('q.id_ville = v.id_ville')
+        ->where('v.id_ville', $idVille)
+        ->where('u.type', ADMIN)
+        ->get()
+        ->result_array();
+        return sizeof($res) > 0 ? $res[0] : null;
+    }
+
+    public function getAdminQuartier($idq){
+        $res = $this->db->select('u.tel, q.nom as quartier, v.nom as ville')
+        ->from(TAB_USER.' u, '.TAB_QUARTIER.' q, '.TAB_VILLE.' v')
+        ->where('u.id_quartier = q.id_quartier')
+        ->where('q.id_ville = v.id_ville')
+        ->where('u.id_quartier', $idq)
+        ->where('u.type', ADMIN)
+        ->get()
+        ->result_array();
+        return sizeof($res) > 0 ? $res[0] : null;
+    }
+
     public function getUserDemande($tel){
         $res = $this->db->select('d.label, d.date, a.*')
         ->from(TAB_DEMANDE.' d')
@@ -114,6 +150,16 @@ class Model_user extends CI_Model
         ->get()
         ->result_array();
         return sizeof($res) > 0 ? $res : null;
+    }
+
+    public function getUserLink($telD, $telR){
+        $res = $this->db->select('*')
+        ->from(TAB_USER_LINK)
+        ->where('donneur', $telD)
+        ->where('receveur', $telR)
+        ->get()
+        ->result_array();
+        return sizeof($res) > 0 ? $res[0] : null;
     }
     //==============================Insert==================================================
 
@@ -126,6 +172,17 @@ class Model_user extends CI_Model
         ->insert(TAB_USER);
                    
 
+    }
+
+    public function creerLienUser($telD, $telR)
+    {
+        if( $this->getUserLink($telD, $telR) == null ){
+            return $this->db->set('donneur', $telD)
+            ->set('receveur', $telR)
+            ->set('date', 'NOW()', false)
+            ->insert(TAB_USER_LINK);
+        }
+                     
     }
 
 

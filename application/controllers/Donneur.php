@@ -25,6 +25,18 @@ class Donneur extends CI_Controller {
         $this->load->view('donneur/footer');
     }
 
+    public function demandesQuartier()
+	{
+        $this->checkUserlogged();
+        $res = $this->user->getDemandeursParQuartier($this->session->userdata('userInfo')['id_quartier']);
+        $data['title'] = 'Les demandes de mon voisinage';
+        $data['demandes'] = $res;
+        $this->load->view('donneur/base_view',$data);
+        $this->load->view('donneur/home_view');
+        $this->load->view('donneur/modal_details');
+        $this->load->view('donneur/footer');
+    }
+
     public function detailsDemande()
 	{
         $this->checkUserlogged();
@@ -37,6 +49,7 @@ class Donneur extends CI_Controller {
         else{
             $data['title'] = 'Je participe à aider cette personne';
             $data['articles'] = $res;
+            $this->user->creerLienUser($this->session->userdata('userInfo')['tel'],$tel);
             $this->load->view('donneur/base_view',$data);
             $this->load->view('donneur/demande_view');
             $this->load->view('donneur/modal_confirm');
@@ -62,6 +75,17 @@ class Donneur extends CI_Controller {
      
     }
     
+    
+    public function referents()
+	{
+        $this->checkUserlogged();
+        $res = $this->user->getAdminVille($this->session->userdata('userInfo')['id_ville']);
+        $data['title'] = 'Les ambassadeurs de la ville';
+        $data['demandes'] = $res;
+        $this->load->view('donneur/base_view',$data);
+        $this->load->view('donneur/contacts_view');
+        $this->load->view('donneur/footer');
+    }
     
 
     private function checkUserlogged() {
