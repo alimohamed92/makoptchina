@@ -26,7 +26,9 @@
                                 >
                             </i> 
                         </a>
-                        <i class="fa fa-sign-in" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Suivre cette demande"></i>
+                        <a href="<?php echo site_url("donneur/detailsDemande").'?tel='.$demande['tel']?>">
+                            <i class="fa fa-sign-in" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Suivre cette demande"></i>
+                        </a>
                     </td>
                 </tr>
 

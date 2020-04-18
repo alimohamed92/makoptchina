@@ -1,12 +1,4 @@
 <!-- Modal -->
-
-
-        </div>
-        
-      </div>
-    </div>  
-</div>
-
 <div class="modal fade bd-example-modal-lg" id="modalDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

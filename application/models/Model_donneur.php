@@ -24,9 +24,9 @@ class Model_donneur extends CI_Model
 
 //====================================UPDATE==============================={
 
-    public function metArticleAttente($id) {
+    public function updateArticleState($id, $state) {
         $tab = array(
-            'etat' => EN_ATTENTE
+            'etat' => $state
             );
         $res = $this->db->where('id_article', $id)
                         ->update(TAB_ARTICLE, $tab);

@@ -8,7 +8,8 @@ class Donneur extends CI_Controller {
     {
         parent::__construct();
         $this->load->library('form_validation');
-		$this->load->model('model_user', 'user');
+        $this->load->model('model_user', 'user');
+        $this->load->model('model_donneur', 'donneur');
     } 
     
     
@@ -37,9 +38,27 @@ class Donneur extends CI_Controller {
             $data['title'] = 'Je participe à aider cette personne';
             $data['articles'] = $res;
             $this->load->view('donneur/base_view',$data);
-            $this->load->view('donneur/home_view');
+            $this->load->view('donneur/demande_view');
+            $this->load->view('donneur/modal_confirm');
             $this->load->view('donneur/footer');
         }
+     
+    }
+
+    public function confirmerDon()
+	{
+        $this->checkUserlogged();
+        $articles = $this->input->post('articles');
+        if(!$articles) return;
+        $res = [];
+        foreach ($articles as $article){
+            $tmp = $this->donneur->updateArticleState($article, EN_ATTENTE);
+            if($tmp > 0){
+                array_push($res,$article);
+            }
+        }
+        echo json_encode($res);
+       
      
     }
     
