@@ -26,7 +26,7 @@
                     <a href="<?php echo site_url('donneur/referents'); ?>"><span class="fa fa-address-card-o"></span> Contacts</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa fa-folder"></span>Mes dossiers</a>
+                    <a href="<?php echo site_url('donneur/demandesSuivies'); ?>"><span class="fa fa-folder"></span>Mes dossiers</a>
                 </li>
                 <li>
                     <a href="<?php echo site_url('donneur/demandesQuartier'); ?>"><span class="fa fa-users"></span> Mes voisins</a>

@@ -81,12 +81,23 @@ class Donneur extends CI_Controller {
         $this->checkUserlogged();
         $res = $this->user->getAdminVille($this->session->userdata('userInfo')['id_ville']);
         $data['title'] = 'Les ambassadeurs de la ville';
-        $data['demandes'] = $res;
+        $data['referents'] = $res;
         $this->load->view('donneur/base_view',$data);
         $this->load->view('donneur/contacts_view');
         $this->load->view('donneur/footer');
     }
     
+    public function demandesSuivies()
+	{
+        $this->checkUserlogged();
+        $res = $this->donneur->getDemandesSuivies($this->session->userdata('userInfo')['tel']);
+        $data['title'] = 'Les demandes de soutien';
+        $data['demandes'] = $res;
+        $this->load->view('donneur/base_view',$data);
+        $this->load->view('donneur/home_view');
+        $this->load->view('donneur/modal_details');
+        $this->load->view('donneur/footer');
+    }
 
     private function checkUserlogged() {
         if( !$this->session->userdata("log_donneur") ) {

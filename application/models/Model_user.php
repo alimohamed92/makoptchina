@@ -94,12 +94,13 @@ class Model_user extends CI_Model
     }
 
     public function getDemandeursParVille($idVille){
-        $res = $this->db->select('d.label, d.date, u.tel, q.nom as quartier, v.nom as ville')
+        $res = $this->db->limit(500)->select('d.label, d.date, u.tel, q.nom as quartier, v.nom as ville')
         ->from(TAB_USER.' u, '.TAB_DEMANDE.' d,'.TAB_QUARTIER.' q, '.TAB_VILLE.' v')
         ->where('d.user_tel = u.tel')
         ->where('u.id_quartier = q.id_quartier')
         ->where('q.id_ville = v.id_ville')
         ->where('v.id_ville', $idVille)
+        ->order_by('quartier', 'asc')
         ->get()
         ->result_array();
         return sizeof($res) > 0 ? $res : null;
@@ -126,7 +127,7 @@ class Model_user extends CI_Model
         ->where('u.type', ADMIN)
         ->get()
         ->result_array();
-        return sizeof($res) > 0 ? $res[0] : null;
+        return sizeof($res) > 0 ? $res : null;
     }
 
     public function getAdminQuartier($idq){
@@ -138,7 +139,7 @@ class Model_user extends CI_Model
         ->where('u.type', ADMIN)
         ->get()
         ->result_array();
-        return sizeof($res) > 0 ? $res[0] : null;
+        return sizeof($res) > 0 ? $res : null;
     }
 
     public function getUserDemande($tel){
