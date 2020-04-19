@@ -19,7 +19,11 @@
     <script src="<?php echo base_url() ?>assets/js/jquery.dataTables.js"></script>
     <script>
     $(document).ready(function() {
-          $('#example').DataTable();
+          $('#example').DataTable({
+            "language": {
+                "url": "/mkpt/assets/js/dataTables.fr.lang"
+            }
+          });
       } );
 
     $(function () {

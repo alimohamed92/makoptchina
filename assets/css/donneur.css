@@ -3,3 +3,7 @@
     border-color: #0b6868; 
     color:white
 }
+
+.tr-link tr:hover, tr > td:hover{
+    cursor: pointer;
+ }

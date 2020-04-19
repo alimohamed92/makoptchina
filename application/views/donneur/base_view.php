@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Sidebar 07</title>
+  	<title>Maqobtchi na</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -36,11 +36,6 @@
                 </li>
             </ul>
 
-            <div class="footer">
-                <p>
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
-                        </p>
-            </div>
     	</nav>
 
         <!-- Page Content  -->
@@ -82,7 +77,7 @@
             </nav>
             <?php if($this->session->userdata('referent') != null){?>
                 <div class="alert alert-info" role="alert">
-                    Merci de contacter le <b> <?php echo $this->session->userdata('referent')['tel']?> </b> (votre référent de quartier) pour toute vérification !
+                    Merci de contacter le <b> <?php echo $this->session->userdata('referent')[0]['tel']?> </b> (votre référent de quartier) pour toute vérification !
                 </div>
             <?php } ?>
             <h2 class="mb-4"><?php echo $title ?></h2>

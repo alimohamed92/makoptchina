@@ -94,8 +94,7 @@ class Donneur extends CI_Controller {
         $data['title'] = 'Les demandes de soutien';
         $data['demandes'] = $res;
         $this->load->view('donneur/base_view',$data);
-        $this->load->view('donneur/home_view');
-        $this->load->view('donneur/modal_details');
+        $this->load->view('donneur/demSuiv_view');
         $this->load->view('donneur/footer');
     }
 
