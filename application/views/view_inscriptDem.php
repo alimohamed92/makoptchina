@@ -8,9 +8,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link href="<?php echo base_url() ?>assets/css/common.css" rel="stylesheet">
   <link href="<?php echo base_url() ?>assets/css/auth.css" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 
 <body >
@@ -26,8 +26,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="row" style="margin-top: 25px;">
    	<div class="col-md-4"></div>
 		<div class="col-md-4" style="margin-left: 25px">
-			<a href ="<?php echo site_url('auth/inscriptDon'); ?>" class="btn" >Je veux aider</a> 
-			<a href ="<?php echo site_url('auth/inscriptDemande'); ?>" type="button" class="btn" style="margin-left: 10px;">Demande de soutien</a>
+			<a href ="<?php echo site_url('auth/inscriptDon'); ?>" class="btn" style="margin-left: 25px">Je veux aider</a> 
+			<a href ="<?php echo site_url('auth'); ?>" type="button" class="btn" style="margin-left: 10px;">Me connecter</a>
     </div>
   </div>
 
@@ -37,23 +37,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class ="col-md-4"></div>
 		<div class="col-md-4" style="background-color: #e9ecef; margin-left: 25px">
 		 
-		 <!-- Formulaire !-->
-            <?php echo form_open("auth");?>
-              <legend class="title"><b> Authentification</b></legend>
+		 <!-- Formulaire A completer !-->
+            <form>
+              <legend class="title"><b> Inscription</b></legend>
               <div class="form-group">
                 <input style="height: 50px;" type="text" name="login" placeholder="Tél" id="login" value="<?php set_value('login')?>" class="form-control">
-                <?php echo form_error('login','<div class="error">','</div>') ?>
               </div>
               <div class="form-group">
-                <input style="height: 50px;" type="password"  placeholder="Mot de passe" name="mp" id="mp" class="form-control">
-                <?php echo form_error('mp','<div class="error">','</div>') ?>
+                <input style="height: 50px;" type="text"  placeholder="..." name="" id="" class="form-control">
               </div>
-              <button style="height: 40px; " class="btn" type="submit">Se connecter</button> 
-              <a href="" data-toggle="modal" data-target="#exampleModal" style =" margin-left: 30px;">
-                Mot de pass oublié
-              </a>
+              <div class="form-group">
+                <input style="height: 50px;" type="text"  placeholder="..." name="" id="" class="form-control">
+              </div>
+              <div class="form-group">
+                <input style="height: 50px;" type="text"  placeholder="..." name="" id="" class="form-control">
+              </div>
+              <button style="height: 40px; " class="btn" type="submit">Valider</button> 
 
-            <?php echo form_close();?> </br>
+            </form> </br>
           </div> 
       </div>
   </div>
@@ -93,18 +94,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </footer>
 </div>
 
-<script>
- $(function() {
-        $('#action').click(function() {
-          var param = 'email=' + $('#email').val();
-          $('#r').load('<?php echo site_url("auth/mp")?>',param);
-        });  
-
-        $('#cancel').click(function() {
-          $('#r'). empty();
-        });  
-  });
-</script>
 <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>
 <script src="<?php echo base_url() ?>assets/js/popper.js"></script>
 <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
