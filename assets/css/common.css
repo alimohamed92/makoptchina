@@ -1,0 +1,10 @@
+:root {
+    --light-green: #eff9f6;
+    --green: #0b6868;
+}
+
+.btn-custum {
+    background: var(--green) ;
+    border-color: var(--green); 
+    color:white
+}

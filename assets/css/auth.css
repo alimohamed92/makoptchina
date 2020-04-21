@@ -1,6 +1,29 @@
+
 .nav-link.active{
     color:black !important;
 }
 li > a {
-    color: white !important;;
+    color: white !important;
+}
+
+body{
+    background-color: var(--light-green) !important;
+}
+button, .btn {
+    background-color: #0b6868 !important; 
+    border-color: #0b6868 !important;
+    color: white !important;
+}
+
+.title{
+    text-align: center;
+    color: #f9a202;
+    /*font-size: 1.8rem;*/
+}
+
+.image-custum{
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
 }

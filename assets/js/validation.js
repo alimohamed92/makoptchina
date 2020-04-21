@@ -1,6 +1,6 @@
 var ValidatorRules = function () {
 	this.tel = function (value) {
-		return (/\+33[0-9]{9}/.test(value.val()) && value.val().length == 12) ||(/0[0-9]{9}/.test(value.val()) && value.val().length == 10);
+		return (/\+33[0-9]{9}/.test(value.val()) && value.val().length == 12) ||(/[0-9]{8}/.test(value.val()) && value.val().length >= 8 && value.val().length <= 14);
 	};
 
 	this.text = this.notEmpty = function (value) {

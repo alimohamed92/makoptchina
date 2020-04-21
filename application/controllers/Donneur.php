@@ -98,6 +98,36 @@ class Donneur extends CI_Controller {
         $this->load->view('donneur/footer');
     }
 
+    public function signaler()
+	{
+        $this->checkUserlogged();
+        if( $articles = $this->input->post('tel')){
+            $phone =  $this->input->post('tel');
+            $valid_number = filter_var($phone, FILTER_SANITIZE_NUMBER_INT);
+            if (strlen($valid_number) < 8 || strlen($valid_number) > 14) {
+                echo "Numero invalide";
+            } 
+            else {
+                $res = $this->user->signal($this->session->userdata('userInfo')['tel'],$phone);
+                if($res == 1){
+                    echo " Signalement pris en compte !";
+                }
+                else {
+                    echo " Opération non prise en compte, merci de réessayer plus tard !";
+                }
+                
+            }     
+        }
+        else{
+            $res = $this->donneur->getDemandesSuivies($this->session->userdata('userInfo')['tel']);
+            $data['title'] = 'Signaler un abus';
+            $this->load->view('donneur/base_view',$data);
+            $this->load->view('donneur/signal_view');
+            $this->load->view('donneur/footer');
+        }
+       
+    }
+
     private function checkUserlogged() {
         if( !$this->session->userdata("log_donneur") ) {
             redirect(site_url('auth'));

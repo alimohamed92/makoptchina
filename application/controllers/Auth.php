@@ -12,9 +12,7 @@ class Auth extends CI_Controller
 		$this->load->model('model_user', 'user');
     }    
 
-	public function index()
-
-	{	//si la session est active
+	public function index(){	//si la session est active
 		//var_dump( password_hash("alimohamed", PASSWORD_DEFAULT));
 		//var_dump(password_verify("alimohamed",'$2y$10$cE5rSEg.gX4rfgv6Dhpz6.tNrMlE3Emslxce0USb94V/R9UfFz1pG'));
 
@@ -72,6 +70,19 @@ class Auth extends CI_Controller
 		
 	}
 
+	public function inscriptDon(){
+		if( $this->input->post('tel')){
+			// insertion dans bdd
+		}
+		$this->load->view("view_inscriptDon");
+	}
+
+	public function inscriptDemande() {
+		if( $this->input->post('tel')){
+			// insertion dans bdd
+		}
+		$this->load->view("view_inscriptDem");
+	}
 	// To be completed
 	public function mp(){
 		$email = $this->input->get('email'); 
