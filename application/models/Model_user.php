@@ -186,6 +186,15 @@ class Model_user extends CI_Model
                      
     }
 
+    public function signal($telUser, $tel)
+    {
+        return $this->db->set('tel_s', $tel)
+        ->set('user_tel', $telUser)
+        ->set('date', 'NOW()', false)
+        ->insert(TAB_SIGNAL);
+                     
+    }
+
 
 
 //

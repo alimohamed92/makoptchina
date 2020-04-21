@@ -32,7 +32,7 @@
                     <a href="<?php echo site_url('donneur/demandesQuartier'); ?>"><span class="fa fa-users"></span> Mes voisins</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa fa-paper-plane"></span>Signaler</a>
+                    <a href="<?php echo site_url('donneur/signaler'); ?>"><span class="fa fa-paper-plane"></span>Signaler</a>
                 </li>
             </ul>
 

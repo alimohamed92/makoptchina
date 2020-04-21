@@ -98,3 +98,4 @@ define('TAB_ARTICLE', 'article');
 define('TAB_CATALOGUE', 'catalogue');
 define('TAB_VILLE', 'ville');
 define('TAB_USER_LINK', 'user_has_user');
+define('TAB_SIGNAL', 'signal');
