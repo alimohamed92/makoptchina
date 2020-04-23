@@ -100,17 +100,19 @@ class Admin extends CI_Controller {
 	{
         $this->checkUserlogged();
         if($this->session->userdata('userInfo')['type'] == ROOT){
-            // to do
+            $res = $this->user->getAllUserVille($this->session->userdata('userInfo')['id_ville']);
+            $data['title'] = 'Les utilisateurs de la ville de '.$this->session->userdata('userInfo')['ville'];
         }
         else{
             $res = $this->user->getUserQuartier($this->session->userdata('userInfo')['id_quartier']);
-            $data['title'] = 'Les ambassadeurs de la ville';
-            $data['users'] = $res;
-            $this->load->view('admin/base_view',$data);
-            $this->load->view('admin/users_view');
-            $this->load->view('admin/modal_supprim');
-            $this->load->view('admin/footer');
+            $data['title'] = 'Les utilisateurs du quartier '.$this->session->userdata('userInfo')['quartier'];
         }
+
+        $data['users'] = $res;
+        $this->load->view('admin/base_view',$data);
+        $this->load->view('admin/users_view');
+        $this->load->view('admin/modal_supprim');
+        $this->load->view('admin/footer');
     
     } 
     
