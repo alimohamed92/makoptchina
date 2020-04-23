@@ -64,11 +64,19 @@ class Donneur extends CI_Controller {
         $articles = $this->input->post('articles');
         if(!$articles) return;
         $res = [];
+        
         foreach ($articles as $article){
             $tmp = $this->donneur->updateArticleState($article, EN_ATTENTE);
             if($tmp > 0){
                 array_push($res,$article);
             }
+        }
+        if(sizeof($articles) > 0 && sizeof($res) > 0) {
+            $tmp = $this->user->getArticleById($articles[0]);
+            if($tmp){
+                $this->donneur->updateDemandeState($tmp['user_tel'], EN_ATTENTE);
+            }
+           
         }
         echo json_encode($res);
        
@@ -108,6 +116,11 @@ class Donneur extends CI_Controller {
                 echo "Numero invalide";
             } 
             else {
+                $tmp = $this->user->getUserByTel($phone);
+                if(!$tmp){
+                    echo "Ce numéro n’est pas inscrit";
+                    return;
+                }
                 $res = $this->user->signal($this->session->userdata('userInfo')['tel'],$phone);
                 if($res == 1){
                     echo " Signalement pris en compte !";
@@ -119,7 +132,6 @@ class Donneur extends CI_Controller {
             }     
         }
         else{
-            $res = $this->donneur->getDemandesSuivies($this->session->userdata('userInfo')['tel']);
             $data['title'] = 'Signaler un abus';
             $this->load->view('donneur/base_view',$data);
             $this->load->view('donneur/signal_view');

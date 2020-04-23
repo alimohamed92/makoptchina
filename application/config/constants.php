@@ -89,6 +89,7 @@ define('ADMIN', 1);
 define('USER_D', 2);
 define('USER_R', 3);
 define('EN_ATTENTE', 1);
+define('ROOT', 11);
 
 //data base tables
 define('TAB_USER', 'user');

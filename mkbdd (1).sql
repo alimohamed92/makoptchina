@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 21 Avril 2020 à 19:02
+-- Généré le :  Mer 22 Avril 2020 à 19:11
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`tel`, `mp`, `type`, `id_quartier`) VALUES
 ('96134498', '****', '3', 1),
 ('96134499', '$2y$10$7MZTnwmgyciA0O3fQq5Lkef1fl7Kivhhv8XsU8OyyD6EWPAsZ7kCa', '2', 1),
-('96141566', '***************', '1', 1);
+('96141566', '$2y$10$7MZTnwmgyciA0O3fQq5Lkef1fl7Kivhhv8XsU8OyyD6EWPAsZ7kCa', '1', 1);
 
 -- --------------------------------------------------------
 
@@ -193,19 +193,19 @@ INSERT INTO `ville` (`id_ville`, `nom`) VALUES
 -- Contraintes pour la table `article`
 --
 ALTER TABLE `article`
-  ADD CONSTRAINT `fk_article_demande1` FOREIGN KEY (`user_tel`) REFERENCES `demande` (`user_tel`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_article_demande1` FOREIGN KEY (`user_tel`) REFERENCES `demande` (`user_tel`) ON DELETE CASCADE ON UPDATE CASCADE ;
 
 --
 -- Contraintes pour la table `demande`
 --
 ALTER TABLE `demande`
-  ADD CONSTRAINT `fk_demande_user1` FOREIGN KEY (`user_tel`) REFERENCES `user` (`tel`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_demande_user1` FOREIGN KEY (`user_tel`) REFERENCES `user` (`tel`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `quartier`
 --
 ALTER TABLE `quartier`
-  ADD CONSTRAINT `fk_quartier_ville1` FOREIGN KEY (`id_ville`) REFERENCES `ville` (`id_ville`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_quartier_ville1` FOREIGN KEY (`id_ville`) REFERENCES `ville` (`id_ville`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `user`
@@ -217,8 +217,8 @@ ALTER TABLE `user`
 -- Contraintes pour la table `user_has_user`
 --
 ALTER TABLE `user_has_user`
-  ADD CONSTRAINT `fk_user_has_user_user1` FOREIGN KEY (`donneur`) REFERENCES `user` (`tel`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_user_has_user_user2` FOREIGN KEY (`receveur`) REFERENCES `user` (`tel`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_user_has_user_user1` FOREIGN KEY (`donneur`) REFERENCES `user` (`tel`) ON DELETE CASCADE ON UPDATE CASCADE ,
+  ADD CONSTRAINT `fk_user_has_user_user2` FOREIGN KEY (`receveur`) REFERENCES `user` (`tel`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
