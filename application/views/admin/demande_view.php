@@ -1,5 +1,6 @@
 <div id="demContent">
     <!--h5 class="mb-1"><?php if(sizeof($articles) > 0) echo $articles[0]['label']; ?></h5-->
+<?php if(sizeof($articles) == 0) { ?> <h5 class="alert alert-primary" role="alert"> Aucun article associé à cette demande; </h5> <?php }?>
     <div class="list-group">
         <table>
         <?php foreach ($articles as $article) { ?>

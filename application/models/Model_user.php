@@ -11,6 +11,7 @@ class Model_user extends CI_Model
         $res = $this->db->select('*')
                         ->from(TAB_USER)
                         ->where('tel', $log)
+                        ->where('dt_archive is NULL')
                         ->get()
                         ->result_array();
 
@@ -98,6 +99,7 @@ class Model_user extends CI_Model
         ->where('u.id_quartier = q.id_quartier')
         ->where('q.id_ville = v.id_ville')
         ->where('v.id_ville', $idVille)
+        ->where('u.dt_archive is NULL')
         ->order_by('quartier', 'asc')
         ->get()
         ->result_array();
@@ -112,6 +114,7 @@ class Model_user extends CI_Model
         ->where('q.id_ville = v.id_ville')
         ->where('v.id_ville', $idVille)
         ->where('d.etat', EN_ATTENTE)
+        ->where('u.dt_archive is NULL')
         ->order_by('quartier', 'asc')
         ->get()
         ->result_array();
@@ -125,6 +128,7 @@ class Model_user extends CI_Model
         ->where('u.id_quartier = q.id_quartier')
         ->where('q.id_ville = v.id_ville')
         ->where('u.id_quartier', $idq)
+        ->where('u.dt_archive is NULL')
         ->get()
         ->result_array();
         return $res;
@@ -137,6 +141,7 @@ class Model_user extends CI_Model
         ->where('q.id_ville = v.id_ville')
         ->where('v.id_ville', $idVille)
         ->where('u.type', ADMIN)
+        ->where('u.dt_archive is NULL')
         ->get()
         ->result_array();
         return $res;
@@ -149,6 +154,7 @@ class Model_user extends CI_Model
         ->where('q.id_ville = v.id_ville')
         ->where('u.id_quartier', $idq)
         ->where('u.type', ADMIN)
+        ->where('u.dt_archive is NULL')
         ->get()
         ->result_array();
         return $res;
@@ -162,6 +168,7 @@ class Model_user extends CI_Model
         ->where('u.id_quartier', $idq)
         ->where('u.type !=', ADMIN)
         ->where('u.type !=', ROOT)
+        ->where('u.dt_archive is NULL')
         ->get()
         ->result_array();
         return $res;
@@ -174,6 +181,7 @@ class Model_user extends CI_Model
         ->where('q.id_ville = v.id_ville')
         ->where('v.id_ville', $idVille)
         ->where('u.type !=', ROOT)
+        ->where('u.dt_archive is NULL')
         ->get()
         ->result_array();
         return $res;
@@ -185,6 +193,7 @@ class Model_user extends CI_Model
         ->from(TAB_ARTICLE.' a')
         ->where('d.user_tel = a.user_tel')
         ->where('d.user_tel', $tel)
+        ->where('d.dt_archive is NULL')
         ->get()
         ->result_array();
         return $res;
@@ -282,16 +291,28 @@ class Model_user extends CI_Model
                         ->update(TAB_USER, $tab);
         return $res;
     }
+
+    public function archiverUserDemande($tel){
+        $res = $this->db->set('dt_archive', 'NOW()', false)
+                        ->where('user_tel', $tel)
+                        ->update(TAB_DEMANDE);
+        return $res;
+    }
 //================================END UPDATE==================================}
 
 
 //==========================DELETE============================================
 
 
-    public function supprimerUser($tel){
-         $res = $this->db->where('tel',$tel)
+    public function archiverUser($tel){
+         /*$res = $this->db->where('tel',$tel)
                          ->delete(TAB_USER);
-         return $res;
+         return $res;*/
+        $res = $this->db->set('dt_archive', 'NOW()', false)
+                        ->where('tel', $tel)
+                        ->update(TAB_USER);
+   
+        return $res;
     }   
     
     public function supprimerArticle($id){

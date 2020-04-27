@@ -62,7 +62,7 @@
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                     <a class="dropdown-item" href="#">Profil</a>
                                     <a class="dropdown-item" href="<?php echo site_url('deconnexion'); ?>">
-                                        Déconnection
+                                        Déconnexion
                                     </a>
                                 </div>
                             </div>

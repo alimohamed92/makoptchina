@@ -3,6 +3,7 @@ $("i[id*='details']").on('click', function (e) {
     var tableContent = "";
     var tel = $target.data('tel');
     var url = $target.data('url');
+    $("#formTablex").html('...');
     loadMoadalValues();
   
     function loadMoadalValues(){

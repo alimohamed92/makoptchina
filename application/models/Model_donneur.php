@@ -17,6 +17,8 @@ public function getDemandesSuivies($tel){
     ->where('d.user_tel = u.tel')
     ->where('u.id_quartier = q.id_quartier')
     ->where('q.id_ville = v.id_ville')
+    ->where('u.dt_archive is NULL')
+    ->where('d.dt_archive is NULL')
     ->where("d.user_tel IN ($sub_query)")
     ->get()
     ->result_array();

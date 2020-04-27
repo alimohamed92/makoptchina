@@ -1,5 +1,6 @@
 <div>
     <!--h5 class="mb-1"><?php if(sizeof($articles) > 0) echo $articles[0]['label']; ?></h5-->
+    <?php if(sizeof($articles) == 0) { ?> <h5 class="alert alert-primary" role="alert"> Aucun article associé à cette demande; </h5> <?php }?>
     <div class="list-group">
         <table>
         <?php foreach ($articles as $article) { ?>
@@ -36,13 +37,15 @@
         </table>
     </div>
     <div style="margin-top: 50px" class="col-md-6">
-        <span data-toggle="tooltip" data-placement="top" title="Cliquer sur ce bouton uniquement si vous estimez avoir satisfait les demandes sélectionnées">
-            <button 
-                type="button" class="btn btn-custum" id ="validDem"
-                data-toggle="modal" data-target="#modalConfirm"
-                data-url = '<?php echo site_url("donneur/confirmerDon")?>'>
-             Valider les sélections
-            </button>
-        </span>
+        <?php if(sizeof($articles) > 0) {?> 
+            <span data-toggle="tooltip" data-placement="top" title="Cliquer sur ce bouton uniquement si vous estimez avoir satisfait les demandes sélectionnées">
+                <button 
+                    type="button" class="btn btn-custum" id ="validDem"
+                    data-toggle="modal" data-target="#modalConfirm"
+                    data-url = '<?php echo site_url("donneur/confirmerDon")?>'>
+                Valider les sélections
+                </button>
+            </span>
+        <?php } ?>
     </div>
 </div>

@@ -76,8 +76,9 @@ class Admin extends CI_Controller {
             }
         }
         $res['articles'] = $resArticle;
+   
         if($articleDemande &&  $this->user->getDemNbArticle($articleDemande['user_tel']) == 0 ){
-            $this->user->supprimerDemande($articleDemande['user_tel']);
+            $this->user->archiverUserDemande($articleDemande['user_tel']);
             $res['demande'] = true;
         }
         echo json_encode($res);
@@ -119,7 +120,10 @@ class Admin extends CI_Controller {
     public function supprimUser ()
 	{
         $this->checkUserlogged();
-        $res = $this->user->supprimerUser($this->input->post('tel'));
+        $res = $this->user->archiverUser($this->input->post('tel'));
+        if($res){
+            $this->user->archiverUserDemande($this->input->post('tel'));
+        }
         echo $res;
     
     }
