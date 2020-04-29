@@ -26,8 +26,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="row" style="margin-top: 25px;">
    	<div class="col-md-4"></div>
 		<div class="col-md-4" style="margin-left: 25px">
-			<a href ="<?php echo site_url('auth/inscriptDemande'); ?>" class="btn" >Besoin d'aide?</a> 
-			<a href ="<?php echo site_url('auth'); ?>" type="button" class="btn" style="margin-left: 10px;">Me connecter</a>
+			<a href ="<?php echo site_url('auth/inscriptDemande'); ?>" class="btn" >Besoin d'aide ?</a> 
+			<a href ="<?php echo site_url('auth'); ?>" type="button" class="btn" style="margin-left: 10px;">Connexion</a>
     </div>
   </div>
 
