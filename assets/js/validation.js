@@ -45,6 +45,10 @@ var ValidatorRules = function () {
 		return true;
 	};
 
+	this.select = function(input) {
+		return input.val() ? true : false;
+	}
+
 	this.dateStringsFollow = function (first, next) {
 		var first_split = first.val().split("-");
 		var second_split = next.val().split("-");
@@ -67,6 +71,10 @@ function isValidInput(type, value){
   var validator = new ValidatorRules();
   if(!type) {
 	  return validator.notEmpty(value);
+  }
+  console.log(type); console.log(value);
+  if(type.includes('select')){
+	  type = 'select';
   }
   return validator[type](value);
 }

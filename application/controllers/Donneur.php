@@ -105,7 +105,7 @@ class Donneur extends CI_Controller {
         $this->load->view('donneur/demSuiv_view');
         $this->load->view('donneur/footer');
     }
-
+ 
     public function signaler()
 	{
         $this->checkUserlogged();

@@ -242,17 +242,35 @@ class Model_user extends CI_Model
         return $res;
     }
 
+    public function getVilles(){
+        $res = $this->db->select('*')
+        ->from(TAB_VILLE)
+        ->order_by('nom', 'asc')
+        ->get()
+        ->result_array();
+        return $res;
+    }
+
+    public function getQuartiers($idVille){
+        $res = $this->db->select('*')
+        ->from(TAB_QUARTIER)
+        ->where('id_ville', $idVille)
+        ->order_by('nom', 'asc')
+        ->get()
+        ->result_array();
+        return $res;
+    }
+
 //==============================Insert==================================================
 
-    public function addPersonnel($personnel, $pwd)
+    public function addUser($user, $pwd)
     {
         $mp = password_hash($pwd, PASSWORD_DEFAULT);
-        return $this->db->set('tel', htmlspecialchars($personnel['tel'],ENT_QUOTES))
+        return $this->db->set('tel', htmlspecialchars($user->tel,ENT_QUOTES))
         ->set('mp', $mp)
-        ->set('type', $personnel['type'])
+        ->set('type', $user->type)
+        ->set('id_quartier', $user->idQuartier)
         ->insert(TAB_USER);
-                   
-
     }
 
     public function creerLienUser($telD, $telR)

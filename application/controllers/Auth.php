@@ -1,7 +1,8 @@
 <?php
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-
+include APPPATH . '/models/VilleModel.php'; 
+include APPPATH . '/models/User.php'; 
 
 class Auth extends CI_Controller
 {
@@ -71,10 +72,35 @@ class Auth extends CI_Controller
 	}
 
 	public function inscriptDon(){
-		if( $this->input->post('tel')){
-			// insertion dans bdd
+		if($this->input->post('user')){
+			$res = array("result"=>false, "msg" => "");
+			$data = $this->input->post('user');
+			$valid_number = filter_var($data['tel'], FILTER_SANITIZE_NUMBER_INT);
+
+            if (strlen($valid_number) < 8 || strlen($valid_number) > 14) {
+				$res['result'] = false;
+				$res['msg'] = "Numero invalide";
+				return;
+			}
+			
+			$tmp = $this->user->getUserByTel($data['tel']);
+            if($tmp){
+				$res['result'] = false;
+				$res['msg'] = "Ce numéro est déjà inscrit";
+				echo json_encode($res);
+                return;
+			}
+
+			$user = new User($data['tel'], USER_D, htmlspecialchars($data['quartier'],ENT_QUOTES));
+			$tmp = $this->user->addUser($user,$data['pwd']);
+			$res['result'] = $tmp;
+			$res['msg'] = $tmp ? "Inscription réussie" : "Echec de l'opération vueillez contacter votre administrateur !";
+			echo json_encode($res);
 		}
-		$this->load->view("view_inscriptDon");
+		else {
+			$this->load->view("view_inscriptDon");
+		}
+		
 	}
 
 	public function inscriptDemande() {
@@ -82,6 +108,17 @@ class Auth extends CI_Controller
 			// insertion dans bdd
 		}
 		$this->load->view("view_inscriptDem");
+	}
+
+	public function villes(){
+		$res = array();
+		$villes = $this->user->getVilles(); //$this->user->getQuartiers
+		foreach($villes as $ville){
+			$villeModel = new VilleModel($ville['id_ville'], $ville['nom']);
+			$villeModel->quartiers = $this->user->getQuartiers($villeModel->id);
+			array_push($res,$villeModel);
+		}
+		echo json_encode($res);
 	}
 	// To be completed
 	public function mp(){
