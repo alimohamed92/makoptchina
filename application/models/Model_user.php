@@ -100,6 +100,7 @@ class Model_user extends CI_Model
         ->where('q.id_ville = v.id_ville')
         ->where('v.id_ville', $idVille)
         ->where('u.dt_archive is NULL')
+        ->where('d.dt_archive is NULL')
         ->order_by('quartier', 'asc')
         ->get()
         ->result_array();
@@ -206,6 +207,16 @@ class Model_user extends CI_Model
         ->get()
         ->result_array();
         return sizeof($res) > 0 ? $res[0]['nb'] : 0;
+    }
+
+    public function getDemandeById($tel){
+        //$query = $this->db->get_where('mytable', array('id' => $id), $limit, $offset);
+        $res = $this->db->select(' * ')
+        ->from(TAB_DEMANDE)
+        ->where('user_tel', $tel)
+        ->get()
+        ->result_array();
+        return sizeof($res) > 0 ? $res[0] : null;
     }
 
     public function getArticleById($idArticle){

@@ -38,16 +38,16 @@
         <?php } ?>
         </table>
     </div>
-    <div style="margin-top: 50px" class="col-md-6">
-      <?php if(sizeof($articles) > 0) {?> 
-        <span data-toggle="tooltip" data-placement="top" title="Cliquer sur ce bouton uniquement si vous estimez avoir satisfait les demandes sélectionnées">
-            <button 
-                type="button" class="btn btn-custum" id ="validDem"
-                data-toggle="modal" data-target="#modalConfirm"
-                data-url = '<?php echo site_url("admin/confirmerDon")?>'>
-             Valider les sélections
-            </button>
-        </span>
-      <?php } ?>
+    <div style="margin-top: 50px; margin-left:15px" class="col-md-6">
+        <?php if(sizeof($articles) > 0) {?> 
+            <span data-toggle="tooltip" data-placement="top" title="Cliquer sur ce bouton uniquement si vous avez reçu les demandes sélectionnées">
+                <button 
+                    type="button" class="btn btn-custum" id ="validDem"
+                    data-toggle="modal" data-target="#modalConfirm"
+                    data-url = '<?php echo site_url("receveur/confirmerReception")?>'>
+                Confirmation de reception
+                </button>
+            </span>
+        <?php } ?>
     </div>
 </div>

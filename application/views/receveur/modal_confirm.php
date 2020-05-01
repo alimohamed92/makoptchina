@@ -20,4 +20,4 @@
   </div>
 </div>
 
-<script src="<?php echo base_url() ?>assets/js/modalDemValidation.js"></script>
+<script src="<?php echo base_url() ?>assets/js/modalDemValidationAdmin.js"></script>

@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <input style="height: 50px;" type="password"  placeholder="Mot de passe *" name="pwd" id="pwd" class="form-control">
                 </div>
                 <div class="form-group">
-                  <input style="height: 50px;" type="password"  placeholder="Confirmer mot de pass *" name="pwdC" id="pwdC" class="form-control">
+                  <input style="height: 50px;" type="password"  placeholder="Confirmer mot de passe *" name="pwdC" id="pwdC" class="form-control">
                 </div>
 
                 <div class="form-group">

@@ -11,7 +11,7 @@ $("#validDem").on('click', function (e) {
 
     function updatePageContent(tab) {
       if(tab['demande']){
-        $('#demContent').html('<h4 class="alert alert-warning" role="alert"> tous les articles liés à cette demande ont été traités</h4>')
+        $('#demContent').html('<h4 class="alert alert-warning" role="alert"> Tous les articles liés à cette demande ont été traités</h4>')
       }
       tab['articles'].forEach(function(id){
         $( "#tr_"+id).remove();
