@@ -39,9 +39,9 @@ var ValidatorRules = function () {
 	}
 
 	this.password = function (value) {
-		if (value.val().length < 8)
+		if (value.val().length < 8 || value.val().length > 16){
 			return false;
-
+		}
 		return true;
 	};
 
@@ -72,7 +72,6 @@ function isValidInput(type, value){
   if(!type) {
 	  return validator.notEmpty(value);
   }
-  console.log(type); console.log(value);
   if(type.includes('select')){
 	  type = 'select';
   }

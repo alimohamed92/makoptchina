@@ -51,3 +51,16 @@
       <?php } ?>
     </div>
 </div>
+
+<script>
+ $(document).ready(function() {
+    var selected = $("input:checked");
+    $('#validDem').attr("disabled",true);
+    $("input").change(function(d) {
+      selected = $("input:checked");
+      $('#validDem').attr("disabled", selected.length === 0); 
+      $("#message").html("");
+    });
+ });
+    
+</script>

@@ -44,9 +44,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="form-group">
                   <input style="height: 50px;" type="password"  placeholder="Mot de passe *" name="pwd" id="pwd" class="form-control">
+                  <small id="emailHelp" class="form-text text-muted">Le mot de passe doit avoir entre 8 et 16 caractères</small>
                 </div>
                 <div class="form-group">
-                  <input style="height: 50px;" type="password"  placeholder="Confirmer mot de passe *" name="pwdC" id="pwdC" class="form-control">
+                  <input style="height: 50px;" type="password"  placeholder="Confirmer le mot de passe *" name="pwdC" id="pwdC" class="form-control">
                 </div>
 
                 <div class="form-group">

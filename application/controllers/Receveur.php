@@ -68,12 +68,28 @@ class Receveur extends CI_Controller {
     public function newDossier(){
         $this->checkUserlogged();
         $demandePossibility = $this->checkNewDemandepossibility();
-        if($this->input->post('articles')){
-            if( !$demandePossibility['isPossible']){
-                echo json_encode($res);
+        $articles  = $this->input->post('articles');
+        if($articles) {
+            $resArticle = [];
+            $tel = $this->session->userdata('userInfo')['tel'];
+            if( !$demandePossibility['isPossible'] ){
+                echo json_encode($demandePossibility);
                 return;
             }
-            //// insert database
+            if($demandePossibility['demande'] === null){
+                $this->user->addDemande($tel, 'Alimentaire');
+            }
+            else {
+                $this->user->activerUserDemande($tel);
+            }
+            foreach ($articles as $article){
+                $tmp = $this->user->addArticle($tel, $article);
+                if($tmp > 0){
+                    array_push($resArticle,$article);
+                }
+            }
+            $this->user->incrementUserDemande($tel);
+            echo json_encode($resArticle);
         }
         else {
             $data['title'] = 'Nouvelle demande';
@@ -136,7 +152,8 @@ class Receveur extends CI_Controller {
             if($diff->days < 14){
                 $article = [];
                 $possible = false;
-                $message = 'Vous ne pouvez pas effectuer une nouvelle demande, car la dernière a été traitée il y a moins de 2 semaines';
+                $nbJoursRestant = 14 - $diff->days;
+                $message = 'Vous ne pouvez pas effectuer une nouvelle demande, car la dernière a été traitée il y a moins de 2 semaines ('.$demande['dt_archive'].'). Réessayez dans '.$nbJoursRestant.' jour(s)';
             }
             else{
                     $article =  $this->receveur->getCatalogArticles();
@@ -148,7 +165,7 @@ class Receveur extends CI_Controller {
             $article =  $this->receveur->getCatalogArticles();
             $possible = true;
         }
-        return array("articles"=>$article, "message" => $message, "isPossible" =>  $possible);
+        return array("articles"=>$article, "message" => $message, "isPossible" =>  $possible, "demande" => $demande );
     }
 
     private function checkUserlogged() {

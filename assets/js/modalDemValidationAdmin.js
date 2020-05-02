@@ -42,11 +42,11 @@ $("#validDem").on('click', function (e) {
         $("#message").html("Aucune demande sélectionnée");
         $('#updateState').attr("disabled", true);
       }
-    setTimeout(function() 
-          {
-            $('#modalConfirm').modal('hide');
-            $("#message").html("");
-          }, 3000);
+    setTimeout(function() {
+      $('#modalConfirm').modal('hide');
+      $("#message").html("");
+      $('#validDem').attr("disabled",true);
+    }, 3000);
     });  
 
 
