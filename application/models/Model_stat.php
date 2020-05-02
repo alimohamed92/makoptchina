@@ -8,11 +8,10 @@ public function getNbDemandes(){
 		
 		//$donneurs = $db->query("SELECT COUNT(*) FROM table");
 		//$demandeurs = $db->query("SELECT COUNT(*) FROM table");
-		$this->db->select('*')
-			->from('demande');
-
-		$demandes = $this->db->get();
-    return $demandes->result();
+	$this->db->select('SUM(nb_total) as total')
+			 ->from(TAB_DEMANDE);
+	$demandes = $this->db->get();
+    return $demandes->result()[0];
 }
 
    

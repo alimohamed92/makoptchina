@@ -29,7 +29,6 @@ class Welcome extends CI_Controller {
 	{
 		$demandes = $this->stat->getNbDemandes();
 		$data['demandes'] = $demandes;
-		//redirect('auth');
 		$this->load->view('welcome_message',  $data);
 	}
 }
