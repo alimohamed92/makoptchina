@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="<?php echo base_url() ?>assets/images/logo-makoptchi-na-.png" />
+                <img src="<?php echo base_url() ?>assets/images/logo-makoptchi-na-.png" WIDTH=180 HEIGHT=90/>
                </a><button class="btn btn-primary" type="button">Connexion</button>
                 </div>
             </div>
