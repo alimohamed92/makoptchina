@@ -3,6 +3,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 include APPPATH . '/models/VilleModel.php'; 
 include APPPATH . '/models/User.php'; 
+include APPPATH . '/libraries/Utils.php'; 
 
 class Auth extends CI_Controller
 {
@@ -122,14 +123,15 @@ class Auth extends CI_Controller
 	}
 	// To be completed
 	public function mp(){
-		$email = $this->input->get('email'); 
-		$user = $this->user->getUserByEmail($email);
+		$tel = $this->input->get('tel'); 
+		$user = $this->user->getUserByTel($tel);
 		if($user){
 			$pwd = generateRandomString(15);
-			if($this->user->modifierUserPwd($user['idPersonnel'],password_hash($pwd, PASSWORD_DEFAULT))){
+			var_dump($pwd); exit;
+			if($this->user->modifierUserPwd($tel,password_hash($pwd, PASSWORD_DEFAULT))){
 				$message = 'Votre nouveau mot de passe temporaire est : <b> '.$pwd;
-				sendMail($_GET["email"], "Mot de passe temporaire ",$message);
-				echo "un mail contenant un mot de passe temporaire a été envoyé à l'adresse : <b>".$_GET["email"]."</b>";
+				sendSms($tel,$message);
+				echo "un SMS contenant un mot de passe temporaire a été envoyé au numéro : <b>".$tel."</b>";
 			}
 			else {
 				echo "Erreur inattendue : vueillez réessayer plus tard ou contacter votre administrateur";
