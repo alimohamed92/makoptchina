@@ -25,11 +25,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="<?php echo base_url() ?>assets/images/logo-makoptchi-na-.png" /></a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars ml-1"></i></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Connexion</a></li>
-                    </ul>
+                <img src="<?php echo base_url() ?>assets/images/logo-makoptchi-na-.png" WIDTH=180 HEIGHT=90/>
+               </a><button class="btn btn-primary" type="button">Connexion</button>
                 </div>
             </div>
 		</nav>
@@ -42,9 +39,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Je demande</a>
             
 			</div>
-		</header>
+        </header>
+        
+<!-- Stat-->
+        <section class="page-section" id="services">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Actuellement nous avons</h2>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">XXX Donneurs</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">XXX Demandeurs</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo count($demandes);?> Demandes</h5>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+        </div>
+                
+</div>    
+            </div>
+        </section>
 
-<!-- Services-->
+<!-- Qui sommes nous-->
 <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center">
@@ -57,8 +89,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section>
 
 
-		<header class="protection">
-		</header>
 
 		<!-- Services-->
         <section class="page-section" id="services">
