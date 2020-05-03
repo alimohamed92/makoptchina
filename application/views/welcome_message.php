@@ -51,14 +51,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-sm-4">
                         <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">XXX Donneurs</h5>
+                            <h5 class="card-title"><?php echo count($donneurs);?> Donneurs</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">XXX Demandeurs</h5>
+                            <h5 class="card-title"><?php echo count($demandeurs);?> Demandeurs</h5>
                             </div>
                         </div>
                     </div>

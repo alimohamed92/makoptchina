@@ -28,8 +28,10 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$demandes = $this->stat->getNbDemandes();
-		$data['demandes'] = $demandes;
+		$demandeurs = $this->stat->getNbDemandeurs();
+		$donneurs = $this->stat->getNbDonneurs();
+		
 		//redirect('auth');
-		$this->load->view('welcome_message',  $data);
+		$this->load->view('welcome_message',  array('demandeurs' => $demandeurs, 'donneurs' => $donneurs ,'demandes' => $demandes));
 	}
 }
