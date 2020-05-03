@@ -1,4 +1,4 @@
-<?php if(sizeof($articles) == 0) { ?> <h5 class="alert alert-warning" role="alert"> <?php echo $message.'</h5>'; }
+<?php if(sizeof($articles) == 0) { ?> <p class="alert alert-warning" role="alert"> <?php echo $message.'</p>'; }
 else { ?>
         <div id="demContent">
             <div class="list-group">
@@ -18,9 +18,12 @@ else { ?>
                 </table>
             </div>
             <div style="margin-top: 50px; ">
-                <button type="button" class="btn btn-custum" id ="validDem" data-url = '<?php echo site_url("receveur/confirmerReception")?>'>
+                <button type="button" class="btn btn-custum" id ="subDem" data-url = '<?php echo site_url("receveur/newDossier")?>'>
                         Enregistrer 
                 </button>
+                <p id ="message"></p>
             </div>
         </div>
 <?php }?>
+
+<script src="<?php echo base_url() ?>assets/js/newDemande.js"></script>

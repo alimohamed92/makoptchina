@@ -40,7 +40,7 @@
     </div>
     <div style="margin-top: 50px; margin-left:15px" class="col-md-6">
         <?php if(sizeof($articles) > 0) {?> 
-            <span data-toggle="tooltip" data-placement="top" title="Cliquer sur ce bouton uniquement si vous avez reçu les demandes sélectionnées">
+            <span data-toggle="tooltip" data-placement="top" title="Cliquer sur ce bouton uniquement si vous avez reçu les demandes sélectionnées ci-dessus">
                 <button 
                     type="button" class="btn btn-custum" id ="validDem"
                     data-toggle="modal" data-target="#modalConfirm"
@@ -51,3 +51,16 @@
         <?php } ?>
     </div>
 </div>
+
+<script>
+ $(document).ready(function() {
+    var selected = $("input:checked");
+    $('#validDem').attr("disabled",true);
+    $("input").change(function(d) {
+      selected = $("input:checked");
+      $('#validDem').attr("disabled", selected.length === 0); 
+      $("#message").html("");
+    });
+ });
+    
+</script>

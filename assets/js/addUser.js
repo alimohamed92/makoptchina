@@ -65,7 +65,6 @@ $(document).ready(function() {
                 res[this.name] = $( this ).val();
             }
         });
-        console.log(res);
         return res;
     }
 

@@ -71,8 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div class="modal-body">
          <form>
           <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Email:</label>
-            <input type="text" class="form-control" id="email">
+            <input type="tel" class="form-control" id="tel" placeholder="Tél">
           </div>
         </form>
         <div id="r"></div>
@@ -93,10 +92,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </footer>
 </div>
 
+
+<script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/popper.js"></script>
+<script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
 <script>
  $(function() {
         $('#action').click(function() {
-          var param = 'email=' + $('#email').val();
+          var param = 'tel=' + $('#tel').val();
           $('#r').load('<?php echo site_url("auth/mp")?>',param);
         });  
 
@@ -105,8 +108,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         });  
   });
 </script>
-<script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/popper.js"></script>
-<script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -304,6 +304,25 @@ class Model_user extends CI_Model
                      
     }
 
+    public function addArticle($telUser, $nom)
+    {
+        return $this->db->set('nom', $nom)
+        ->set('user_tel', $telUser)
+        ->set('quantite', 0)
+        ->insert(TAB_ARTICLE);
+                     
+    }
+
+    public function addDemande($telUser, $label)
+    {
+        return $this->db->set('label', $label)
+        ->set('user_tel', $telUser)
+        ->set('date', 'NOW()', false)
+        ->set('dt_archive', null)
+        ->insert(TAB_DEMANDE);
+                     
+    }
+
 
 //
 //===========================END INSERT=====================================
@@ -323,6 +342,20 @@ class Model_user extends CI_Model
 
     public function archiverUserDemande($tel){
         $res = $this->db->set('dt_archive', 'NOW()', false)
+                        ->where('user_tel', $tel)
+                        ->update(TAB_DEMANDE);
+        return $res;
+    }
+
+    public function activerUserDemande($tel){
+        $res = $this->db->set('dt_archive', null)
+                        ->where('user_tel', $tel)
+                        ->update(TAB_DEMANDE);
+        return $res;
+    }
+
+    public function incrementUserDemande($tel){
+        $res = $this->db->set('nb_total', 'nb_total + 1', false)
                         ->where('user_tel', $tel)
                         ->update(TAB_DEMANDE);
         return $res;

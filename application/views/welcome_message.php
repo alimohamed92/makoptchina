@@ -51,21 +51,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-sm-4">
                         <div class="card">
                         <div class="card-body">
+<<<<<<< HEAD
                             <h5 class="card-title"><?php echo count($donneurs);?> Donneurs</h5>
+=======
+                            <h5 class="card-title">XXX Donneurs inscrits</h5>
+>>>>>>> 5b3525ff615c0f2f645498e10098c23201d2362c
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="card">
                         <div class="card-body">
+<<<<<<< HEAD
                             <h5 class="card-title"><?php echo count($demandeurs);?> Demandeurs</h5>
+=======
+                            <h5 class="card-title">XXX Demandeurs inscrits</h5>
+>>>>>>> 5b3525ff615c0f2f645498e10098c23201d2362c
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo count($demandes);?> Demandes</h5>
+                            <h5 class="card-title"><?php echo $demandes->total;?> Demandes</h5>
                             </div>
                         </div>
                     </div>
