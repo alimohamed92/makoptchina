@@ -9,7 +9,7 @@ li > a {
 body{
     background-color: var(--light-green) !important;
 }
-button, .btn {
+.btn {
     background-color: #0b6868 !important; 
     border-color: #0b6868 !important;
     color: white !important;

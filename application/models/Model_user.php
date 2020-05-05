@@ -335,7 +335,7 @@ class Model_user extends CI_Model
         $tab = array(
             'mp' => $pwd
             );
-        $res = $this->db->where('tel', $id)
+        $res = $this->db->where('tel', $tel)
                         ->update(TAB_USER, $tab);
         return $res;
     }

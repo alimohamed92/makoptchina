@@ -64,7 +64,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title col-md-11" id="exampleModalLabel">Mot de passe oublié</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" id="close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -104,6 +104,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         });  
 
         $('#cancel').click(function() {
+          $('#r'). empty();
+        });  
+        $('#close').click(function() {
           $('#r'). empty();
         });  
   });

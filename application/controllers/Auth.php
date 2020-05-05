@@ -127,11 +127,16 @@ class Auth extends CI_Controller
 		$user = $this->user->getUserByTel($tel);
 		if($user){
 			$pwd = generateRandomString(15);
-			var_dump($pwd); exit;
 			if($this->user->modifierUserPwd($tel,password_hash($pwd, PASSWORD_DEFAULT))){
 				$message = 'Votre nouveau mot de passe temporaire est : <b> '.$pwd;
-				sendSms($tel,$message);
-				echo "un SMS contenant un mot de passe temporaire a été envoyé au numéro : <b>".$tel."</b>";
+				$result = $this->sendSms($tel,$message);
+				if($result->result === 'ok') {
+					echo "un SMS contenant votre nouveau mot de passe  a été envoyé au numéro : <b>".$tel."</b>";
+				}
+				else {
+					echo "Erreur inattendue : vueillez réessayer plus tard ou contacter votre administrateur";
+				}
+				
 			}
 			else {
 				echo "Erreur inattendue : vueillez réessayer plus tard ou contacter votre administrateur";
@@ -141,6 +146,34 @@ class Auth extends CI_Controller
 		else {
 			echo "untilisateur non existant";
 		}
+	}
+
+	public function sendSms($tel,$message){
+		$urlSms = 'http://api.smflow.net/api/send_sms/';
+		$urlAuth = 'http://api.smflow.net/api/auth/';
+		$data =  array( 'username'=> SMS_USER, 'password' =>SMS_PWD) ;
+		$smsParams = array(
+						'token'=>'',
+						'message' => $message,
+						'destinataire' => $tel
+					 );		
+	 	
+		$result = $this->httpPost($urlAuth,$data);
+		if($result->token){
+			$smsParams['token'] = $result->token;
+			$res = $this->httpPost($urlSms,$smsParams);
+			return $res;
+		}
+	}
+
+	private function httpPost($url, $param){
+		$ch = curl_init($url);
+	    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($param)); 
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+		$result = curl_exec($ch);
+		curl_close($ch);
+		return json_decode($result);
 	}
 	
 }
