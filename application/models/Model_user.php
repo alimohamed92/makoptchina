@@ -372,6 +372,13 @@ class Model_user extends CI_Model
                         ->update(TAB_DEMANDE);
         return $res;
     }
+
+    public function incrementUserArticleTraite($tel){
+        $res = $this->db->set('nb_article_traite', 'nb_article_traite + 1', false)
+                        ->where('user_tel', $tel)
+                        ->update(TAB_DEMANDE);
+        return $res;
+    }
 //================================END UPDATE==================================}
 
 

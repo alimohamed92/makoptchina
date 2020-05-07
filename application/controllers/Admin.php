@@ -73,6 +73,7 @@ class Admin extends CI_Controller {
             $tmp = $this->user->supprimerArticle($article);
             if($tmp > 0){
                 array_push($resArticle,$article);
+                $this->user->incrementUserArticleTraite($articleDemande['user_tel']);
             }
         }
         $res['articles'] = $resArticle;
