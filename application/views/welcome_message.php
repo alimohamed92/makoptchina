@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta name="description" content="" />
 	<meta name="author" content="" />
 
-	<title>Maqobtchi NA</title>
+	<title>Alhery</title>
 
 	<!-- <link rel="icon" type="image/x-icon" href="<?php echo base_url() ?>assets/css/img/favicon.ico" /> -->
 	<!-- Font Awesome icons (free version)-->

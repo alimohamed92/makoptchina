@@ -81,6 +81,10 @@ class Admin extends CI_Controller {
             $this->user->archiverUserDemande($articleDemande['user_tel']);
             $res['demande'] = true;
         }
+
+        else if($articleDemande &&  sizeof($this->user->getDemArticleEnAttente($articleDemande['user_tel'])) == 0 ){
+            $this->donneur->updateDemandeState($articleDemande['user_tel'], 0);
+        }
         echo json_encode($res);
     }
     

@@ -6,7 +6,7 @@
     <div class=" border shadow" style="text-align: center;">
     <footer class=" col-md-12 ">
                 <div class="panel panel-body">
-                <p style="margin-top: 15px">MAQOBTCHI NA Tous droits réservés </p>
+                <p style="margin-top: 15px">&copy; Alhery 2020 </p>
                 </div>
     </footer>
     </div>

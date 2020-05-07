@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <?php echo form_open("auth");?>
               <legend class="title"><b> Authentification</b></legend>
               <div class="form-group">
-                <input style="height: 50px;" type="text" name="login" placeholder="Tél" id="login" value="<?php set_value('login')?>" class="form-control">
+                <input style="height: 50px;" type="text" name="login" placeholder="Numéro de tél" id="login" value="<?php set_value('login')?>" class="form-control">
                 <?php echo form_error('login','<div class="error">','</div>') ?>
               </div>
               <div class="form-group">
@@ -87,7 +87,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class=" border shadow" style="margin-top : 50px; text-align: center;">
   <footer class=" col-md-12 ">
             <div class="panel panel-body">
-              <p style="margin-top: 15px">MAQOBTCHI NA Tous droits réservés </p>
+              <p style="margin-top: 15px">&copy; Alhery 2020 </p>
             </div>
   </footer>
 </div>
