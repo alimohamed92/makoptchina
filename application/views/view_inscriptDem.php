@@ -43,11 +43,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <form method="post">
               <legend class="title"><b> Inscription</b></legend>
               <div class="form-group">
-<<<<<<< HEAD
                 <input style="height: 50px;" type="text" name="tel" placeholder="Numéro de Téléphone" id="tel" class="form-control" required>
-=======
-                <input style="height: 50px;" type="text" name="login" placeholder="Numéro de tél" id="login" value="<?php set_value('login')?>" class="form-control">
->>>>>>> ce4675fc3c228c36f289b110064c4a0294497dbe
+
               </div>
               <div class="form-group">
                   <input style="height: 50px;" type="password"  placeholder="Mot de passe *" name="pwd" id="pwd" class="form-control" required>
