@@ -284,6 +284,17 @@ class Model_user extends CI_Model
         ->insert(TAB_USER);
     }
 
+     public function addApplicant($user, $pwd, $nbr_pers_charge)
+    {
+        $mp = password_hash($pwd, PASSWORD_DEFAULT);
+        return $this->db->set('tel', htmlspecialchars($user->tel,ENT_QUOTES))
+        ->set('mp', $mp)
+        ->set('type', $user->type)
+        ->set('id_quartier', $user->idQuartier)
+        ->set('nbr_pers_charge', $nbr_pers_charge)
+        ->insert(TAB_USER);
+    }
+
     public function creerLienUser($telD, $telR)
     {
         if( $this->getUserLink($telD, $telR) == null ){

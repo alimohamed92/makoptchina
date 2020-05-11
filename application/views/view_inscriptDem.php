@@ -7,10 +7,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
   <link href="<?php echo base_url() ?>assets/css/common.css" rel="stylesheet">
   <link href="<?php echo base_url() ?>assets/css/auth.css" rel="stylesheet">
+  
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/bootstrap.min.css">
+  <link href="<?php echo base_url() ?>assets/css/bootstrap-select.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 
 </head>
 
 <body >
@@ -36,26 +39,63 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="row col-md-12" >
         <div class ="col-md-4"></div>
 		<div class="col-md-4" style="background-color: #e9ecef; margin-left: 25px">
-		 
 		 <!-- Formulaire A completer !-->
-            <form>
+            <form method="post">
               <legend class="title"><b> Inscription</b></legend>
               <div class="form-group">
-                <input style="height: 50px;" type="text" name="login" placeholder="Tél" id="login" value="<?php set_value('login')?>" class="form-control">
+                <input style="height: 50px;" type="text" name="tel" placeholder="Numéro de Téléphone" id="tel" class="form-control" required>
               </div>
               <div class="form-group">
-                <input style="height: 50px;" type="text"  placeholder="..." name="" id="" class="form-control">
+                  <input style="height: 50px;" type="password"  placeholder="Mot de passe *" name="pwd" id="pwd" class="form-control" required>
+                  <small id="emailHelp" class="form-text text-muted">Le mot de passe doit avoir entre 8 et 16 caractères</small>
+                </div>
+                <div class="form-group">
+                  <input style="height: 50px;" type="password"  placeholder="Confirmer le mot de passe *" name="pwdC" id="pwdC" class="form-control" required>
+                </div>
+              <div class="form-group">
+                <select style="height: 50px;" placeholder="Ville" name="ville" id="ville" class="form-control" required>
+                  <option value="" disabled selected>Choissisez votre ville</option>
+                </select>
               </div>
               <div class="form-group">
-                <input style="height: 50px;" type="text"  placeholder="..." name="" id="" class="form-control">
+                <select style="height: 50px;" placeholder="Quartier" name="quartier" id="quartier" class="form-control" required>
+                   <option value="" disabled selected>Choissisez votre quartier</option>
+                </select>
               </div>
               <div class="form-group">
-                <input style="height: 50px;" type="text"  placeholder="..." name="" id="" class="form-control">
-              </div>
-              <button style="height: 40px; " class="btn" type="submit">Valider</button> 
+                <input style="height: 50px;" type="number" placeholder="Nombre de personnes dans le foyer" name="nbr_personne" id="nbr_personne" class="form-control" min="1" max="10" >
+              </div> 
+              <div class="form-group">
+                <select class="form-control selectpicker" name="items" id="items" multiple data-live-search="true" data-style="btn-primary" title="Sélectionner vos besoins" >
+                  <?php 
 
+                    $query = $this->db->order_by('nom_categorie')->get('category');
+                    $results = $query->result();
+                    foreach ($results as $row){
+                      echo "<optgroup label='".$row->nom_categorie."'>";
+                      $items_query = $this->db->order_by('nom_produit')->get_where('catalogue', array('id_categorie' => $row->id_categorie));
+                      foreach ($items_query->result() as $item) {
+                        echo "<option style='color:green !important; font-weight:bold;' value='".$item->id_produit."'>".$item->nom_produit."</option>";
+                      }
+                      echo "</optgroup>";
+
+                    }
+                  ?>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <textarea class="form-control" style="height: 50px;" id="autre" name="autre">Autres besoins
+                </textarea>
+              </div>
+              <button style="height: 40px;" 
+                  data-url="<?php echo site_url('auth/villes'); ?>" 
+                  data-posturl="<?php echo site_url('auth/inscriptDemande'); ?>" 
+                  id="valid" class="btn" type ="button">Valider</button> 
             </form> </br>
+            <div id="info"></div>
           </div> 
+          
       </div>
   </div>
 
@@ -97,5 +137,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>
 <script src="<?php echo base_url() ?>assets/js/popper.js"></script>
 <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/addApplicant.js"></script>
+<script src="<?php echo base_url() ?>assets/js/validation.js"></script>
+<script src="<?php echo base_url() ?>assets/js/bootstrap-select.min.js"></script>
 </body>
 </html>

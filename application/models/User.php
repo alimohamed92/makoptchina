@@ -12,5 +12,6 @@ class User
     $this->idQuartier = $idQuartier;
   }
 
+
 }
 ?>

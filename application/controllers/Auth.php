@@ -3,7 +3,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 include APPPATH . '/models/VilleModel.php'; 
 include APPPATH . '/models/User.php'; 
-include APPPATH . '/libraries/Utils.php'; 
+//include APPPATH . '/libraries/Utils.php'; 
 
 class Auth extends CI_Controller
 {
@@ -105,10 +105,58 @@ class Auth extends CI_Controller
 	}
 
 	public function inscriptDemande() {
-		if( $this->input->post('tel')){
-			// insertion dans bdd
+		if($this->input->post('user')){
+			$res = array("result"=>false, "msg" => "");
+			$data = $this->input->post('user');
+			$valid_number = filter_var($data['tel'], FILTER_SANITIZE_NUMBER_INT);
+
+            if (strlen($valid_number) < 8 || strlen($valid_number) > 14) {
+				$res['result'] = false;
+				$res['msg'] = "Numero invalide";
+				return;
+			}
+			
+			$tmp = $this->user->getUserByTel($data['tel']);
+            if($tmp){
+				$res['result'] = false;
+				$res['msg'] = "Ce numéro est déjà inscrit";
+				echo json_encode($res);
+                return;
+			}
+
+			$user = new User($data['tel'], USER_R, htmlspecialchars($data['quartier'],ENT_QUOTES));
+			$tmp = $this->user->addApplicant($user,$data['pwd'],$data["nbr_personne"]);
+			$res['result'] = $tmp;
+			if($tmp){
+				if($this->user->getDemandeById($data['tel']) == null){
+					$this->user->addDemande($data['tel'],"Demande");
+				}
+				if(array_key_exists("items", data)){
+					for($i=0; $i < count($data["items"]); $i++){
+						$name = $this->db->get_where('catalogue', array('id_produit' => (int)$data['items'][$i]));
+						$result = $name->result();
+						if($result[0] != null){
+							$add_item = $this->user->addArticle($data['tel'],$result[0]->nom_produit);
+						}
+					}
+				}
+				if($data["autre"] != null or data['autre'] != ''){
+					$this->user->addArticle($data['tel'],$data["autre"]);
+				}
+				$this->session->set_userdata('msg_accueil', 'Inscription réussie');
+				redirect(site_url('index.php/auth/'));
+			}
+			else{
+				$res['msg'] = "Echec de l'opération vueillez contacter votre administrateur !";
+				echo json_encode($res);
+			}
+			#$res['msg'] = $tmp ? "Inscription réussie" : "Echec de l'opération vueillez contacter votre administrateur !";;
+			#echo json_encode($res);
+			//$this->load->view("view_inscriptDem");
 		}
-		$this->load->view("view_inscriptDem");
+		else {
+			$this->load->view("view_inscriptDem");
+		}
 	}
 
 	public function villes(){
@@ -121,6 +169,7 @@ class Auth extends CI_Controller
 		}
 		echo json_encode($res);
 	}
+
 	// To be completed
 	public function mp(){
 		$tel = $this->input->get('tel'); 

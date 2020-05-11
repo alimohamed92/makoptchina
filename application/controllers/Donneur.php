@@ -10,6 +10,7 @@ class Donneur extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->model('model_user', 'user');
         $this->load->model('model_donneur', 'donneur');
+        $this->load->model('model_quartier', 'quartier');
     } 
     
     
@@ -81,6 +82,28 @@ class Donneur extends CI_Controller {
         echo json_encode($res);
        
      
+    }
+
+    public function get_districts()
+    {
+        log_message('debug', $this->input->post('ville'));
+        //die(print_r($this->input->post('ville'), TRUE));
+        $country=$this->input->post('ville');
+        //$this->load->model('model_quartier');
+        $districts = array();
+        $districts = $this->quartier->getQuartier($country);
+        echo json_encode($districts);
+    }
+
+    public function add_applicant()
+    {
+        log_message('debug', $this->input->post('tel'));
+        //die(print_r($this->input->post('tel'), TRUE));
+        //$country=$this->input->post('ville');
+        //$this->load->model('model_quartier');
+        //$districts = array();
+        //$districts = $this->quartier->getQuartier($country);
+        //echo json_encode($districts);
     }
     
     
