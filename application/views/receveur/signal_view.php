@@ -6,11 +6,11 @@
       <div class="input-group-prepend">
         <div class="input-group-text">@Tél</div>
       </div>
-      <input type="tel" name="tel" class="form-control" id="tel" placeholder="numéro de tél">
+      <input type="tel" name="tel" class="form-control" id="tel" placeholder="numéro de tél à signaler">
     </div>
     <button type="button" id="sub" class="btn btn-primary mb-2" data-url = '<?php echo site_url("receveur/signaler")?>'>Signaler</button>
     <div style="margin-left: 10px" class="alert alert-warning" role="alert">
-      Merci de privilégier le contact de votre référent par rapport à une signalisation directe
+      Merci de nous aider à identifier toute personne qui abuse de l'entraide
     </div>
   </form>
 </div>

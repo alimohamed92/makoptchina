@@ -209,6 +209,17 @@ class Model_user extends CI_Model
         return sizeof($res) > 0 ? $res[0]['nb'] : 0;
     }
 
+    
+    public function getDemArticleEnAttente($tel){
+        $res = $this->db->select('*')
+        ->from(TAB_ARTICLE)
+        ->where('user_tel', $tel)
+        ->where('etat', EN_ATTENTE)
+        ->get()
+        ->result_array();
+        return $res;
+    }
+
     public function getDemandeById($tel){
         //$query = $this->db->get_where('mytable', array('id' => $id), $limit, $offset);
         $res = $this->db->select(' * ')
@@ -327,10 +338,10 @@ class Model_user extends CI_Model
     public function addDemande($telUser, $label)
     {
         return $this->db->set('label', $label)
-        ->set('user_tel', $telUser)
-        ->set('date', 'NOW()', false)
-        ->set('dt_archive', null)
-        ->insert(TAB_DEMANDE);
+                        ->set('user_tel', $telUser)
+                        ->set('date', 'NOW()', false)
+                        ->set('dt_archive', null)
+                        ->insert(TAB_DEMANDE);
                      
     }
 
@@ -346,13 +357,14 @@ class Model_user extends CI_Model
         $tab = array(
             'mp' => $pwd
             );
-        $res = $this->db->where('tel', $id)
+        $res = $this->db->where('tel', $tel)
                         ->update(TAB_USER, $tab);
         return $res;
     }
 
     public function archiverUserDemande($tel){
         $res = $this->db->set('dt_archive', 'NOW()', false)
+                        ->set('etat', 0)
                         ->where('user_tel', $tel)
                         ->update(TAB_DEMANDE);
         return $res;
@@ -367,6 +379,13 @@ class Model_user extends CI_Model
 
     public function incrementUserDemande($tel){
         $res = $this->db->set('nb_total', 'nb_total + 1', false)
+                        ->where('user_tel', $tel)
+                        ->update(TAB_DEMANDE);
+        return $res;
+    }
+
+    public function incrementUserArticleTraite($tel){
+        $res = $this->db->set('nb_article_traite', 'nb_article_traite + 1', false)
                         ->where('user_tel', $tel)
                         ->update(TAB_DEMANDE);
         return $res;

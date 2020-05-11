@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Maqobtchi na</title>
+  	<title>Alhery</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -17,19 +17,20 @@
     <div class="wrapper d-flex align-items-stretch">
 
 	    <nav id="sidebar" class="active">
-            <h1><a href="" class="logo">M.</a></h1>
+            <h1><a href="" class="logo">A.</a></h1>
             <ul class="list-unstyled components mb-5">
                 <li class="active">
                     <a href="<?php echo site_url('receveur'); ?>"><span class="fa fa-home"></span> Accueil</a>
                 </li>
                 <li>
-                    <a href="<?php echo site_url('receveur/referents'); ?>"><span class="fa fa-address-card-o"></span> Contacts</a>
-                </li>
-                <li>
                     <a href="<?php echo site_url('receveur/newDossier'); ?>"><span class="fa fa-folder-open"></span>Nouveau dossier</a>
                 </li>
                 <li>
-                    <a href="<?php echo site_url('receveur/signaler'); ?>"><span class="fa fa-paper-plane"></span>Signaler</a>
+                    <a href="<?php echo site_url('receveur/referents'); ?>"><span class="fa fa-address-card-o"></span> Contacts</a>
+                </li>
+
+                <li>
+                    <a href="<?php echo site_url('receveur/signaler'); ?>"><span class="fa fa-paper-plane"></span>Signaler </a>
                 </li>
             </ul>
 

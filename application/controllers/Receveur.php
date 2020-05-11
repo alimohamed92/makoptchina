@@ -10,6 +10,7 @@ class Receveur extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->model('model_user', 'user');
         $this->load->model('model_receveur', 'receveur');
+        $this->load->model('model_donneur', 'donneur');
     } 
     
     
@@ -40,6 +41,7 @@ class Receveur extends CI_Controller {
             $tmp = $this->user->supprimerArticle($article);
             if($tmp > 0){
                 array_push($resArticle,$article);
+                $this->user->incrementUserArticleTraite($articleDemande['user_tel']);
             }
         }
         $res['articles'] = $resArticle;
@@ -47,6 +49,9 @@ class Receveur extends CI_Controller {
         if($articleDemande &&  $this->user->getDemNbArticle($articleDemande['user_tel']) == 0 ){
             $this->user->archiverUserDemande($articleDemande['user_tel']);
             $res['demande'] = true;
+        }
+        else if($articleDemande &&  sizeof($this->user->getDemArticleEnAttente($articleDemande['user_tel'])) == 0 ){
+            $this->donneur->updateDemandeState($articleDemande['user_tel'], 0);
         }
         echo json_encode($res);
        
