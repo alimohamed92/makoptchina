@@ -40,7 +40,7 @@ $(document).ready(function() {
         if(isValidInput(input.type,  $(input))){
             css = 'rgb(255, 255, 255)';
         }
-        else{
+        else {
             css = 'rgb(247, 199, 199)';
         }
         $(input).css("background-color",css,'!important');
@@ -96,5 +96,6 @@ $(document).ready(function() {
         html += data.msg+'</em>';
         $("#info").html(html);
     }
+
 
   });

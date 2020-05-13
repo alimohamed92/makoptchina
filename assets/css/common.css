@@ -14,5 +14,6 @@
  }
 
  form .error {
-  color: red !important;
+  color: #842e1b !important;
+  font-weight: bold;
 }

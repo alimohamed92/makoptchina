@@ -93,8 +93,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
 
               <div class="form-group">
-                <textarea class="form-control" style="height: 50px;" id="autre" name="autre">Autres besoins
-                </textarea>
+                <textarea class="form-control" style="height: 50px;" id="autre" name="autre" placeholder="Autres besoins"></textarea>
               </div>
               <button style="height: 40px;" 
                   data-url="<?php echo site_url('auth/villes'); ?>" 
