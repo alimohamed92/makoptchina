@@ -40,33 +40,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class ="col-md-4"></div>
 		<div class="col-md-4" style="background-color: #e9ecef; margin-left: 25px">
 		 <!-- Formulaire A completer !-->
-            <form method="post">
+            <div class="" id="msg"> </div>
+            <form method="post" id="registration">
               <legend class="title"><b> Inscription</b></legend>
               <div class="form-group">
-                <input style="height: 50px;" type="text" name="tel" placeholder="Numéro de Téléphone" id="tel" class="form-control" required>
-
-              </div>
+                <label for="tel"></label>
+                <input style="height: 50px;" type="text" name="tel" placeholder="Numéro de Téléphone" id="tel" class="form-control"> </p>
+                
+              </div> 
               <div class="form-group">
-                  <input style="height: 50px;" type="password"  placeholder="Mot de passe *" name="pwd" id="pwd" class="form-control" required>
+                  <label for="pwd"></label>
+                  <input style="height: 50px;" type="password"  placeholder="Mot de passe *" name="pwd" id="pwd" class="form-control">
                   <small id="emailHelp" class="form-text text-muted">Le mot de passe doit avoir entre 8 et 16 caractères</small>
                 </div>
                 <div class="form-group">
-                  <input style="height: 50px;" type="password"  placeholder="Confirmer le mot de passe *" name="pwdC" id="pwdC" class="form-control" required>
+                  <label for="pwdC"></label>
+                  <input style="height: 50px;" type="password"  placeholder="Confirmer le mot de passe *" name="pwdC" id="pwdC" class="form-control">
                 </div>
               <div class="form-group">
-                <select style="height: 50px;" placeholder="Ville" name="ville" id="ville" class="form-control" required>
+                <select style="height: 50px;" placeholder="Ville" name="ville" id="ville" class="form-control">
                   <option value="" disabled selected>Choissisez votre ville</option>
                 </select>
               </div>
               <div class="form-group">
-                <select style="height: 50px;" placeholder="Quartier" name="quartier" id="quartier" class="form-control" required>
+                <label for="quartier"></label>
+                <select style="height: 50px;" placeholder="Quartier" name="quartier" id="quartier" class="form-control">
                    <option value="" disabled selected>Choissisez votre quartier</option>
                 </select>
               </div>
               <div class="form-group">
+                <label for="nbr_personne"></label>
                 <input style="height: 50px;" type="number" placeholder="Nombre de personnes dans le foyer" name="nbr_personne" id="nbr_personne" class="form-control" min="1" max="10" >
               </div> 
               <div class="form-group">
+                <label for="items"></label>
                 <select class="form-control selectpicker" name="items" id="items" multiple data-live-search="true" data-style="btn-primary" title="Sélectionner vos besoins" >
                   <?php 
 
@@ -91,8 +98,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
               <button style="height: 40px;" 
                   data-url="<?php echo site_url('auth/villes'); ?>" 
-                  data-posturl="<?php echo site_url('auth/inscriptDemande'); ?>" 
-                  id="valid" class="btn" type ="button">Valider</button> 
+                  data-posturl="<?php echo site_url('auth/inscriptDemande'); ?>"
+                  data-redirect ="<?php site_url('auth'); ?>"
+                  id="valid" class="btn" type ="submit">Valider</button> 
             </form> </br>
             <div id="info"></div>
           </div> 
@@ -138,8 +146,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>
 <script src="<?php echo base_url() ?>assets/js/popper.js"></script>
 <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/addApplicant.js"></script>
-<script src="<?php echo base_url() ?>assets/js/validation.js"></script>
 <script src="<?php echo base_url() ?>assets/js/bootstrap-select.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/jquery-validate.js"></script>
+<script src="<?php echo base_url() ?>assets/js/addApplicant.js"></script>
+
+
 </body>
 </html>

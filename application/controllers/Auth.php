@@ -113,6 +113,7 @@ class Auth extends CI_Controller
             if (strlen($valid_number) < 8 || strlen($valid_number) > 14) {
 				$res['result'] = false;
 				$res['msg'] = "Numero invalide";
+				$this->session->set_userdata('msg_accueil', $res['msg']);
 				return;
 			}
 			
@@ -120,6 +121,7 @@ class Auth extends CI_Controller
             if($tmp){
 				$res['result'] = false;
 				$res['msg'] = "Ce numéro est déjà inscrit";
+				$this->session->set_userdata('msg_accueil', $res['msg']);
 				echo json_encode($res);
                 return;
 			}
@@ -131,7 +133,7 @@ class Auth extends CI_Controller
 				if($this->user->getDemandeById($data['tel']) == null){
 					$this->user->addDemande($data['tel'],"Demande");
 				}
-				if(array_key_exists("items", data)){
+				if(array_key_exists("items", $data)){
 					for($i=0; $i < count($data["items"]); $i++){
 						$name = $this->db->get_where('catalogue', array('id_produit' => (int)$data['items'][$i]));
 						$result = $name->result();
@@ -140,14 +142,17 @@ class Auth extends CI_Controller
 						}
 					}
 				}
-				if($data["autre"] != null or data['autre'] != ''){
+				if(!empty($data["autre"])){
 					$this->user->addArticle($data['tel'],$data["autre"]);
 				}
 				$this->session->set_userdata('msg_accueil', 'Inscription réussie');
-				redirect(site_url('index.php/auth/'));
+				$res['msg'] = 'login_redirect'; 
+				echo json_encode($res);
 			}
 			else{
+
 				$res['msg'] = "Echec de l'opération vueillez contacter votre administrateur !";
+				$this->session->set_userdata('msg_accueil', $res['msg']);
 				echo json_encode($res);
 			}
 			#$res['msg'] = $tmp ? "Inscription réussie" : "Echec de l'opération vueillez contacter votre administrateur !";;

@@ -12,3 +12,7 @@
 .tr-link tr:hover, .tr-link  > td:hover{
     cursor: pointer;
  }
+
+ form .error {
+  color: red !important;
+}
