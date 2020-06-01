@@ -10094,11 +10094,12 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("../images/sliders.jpg");
+  background-image: url("../images/accueil.png");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+  height: 600px;
 }
 header.protection {
     padding-top: 15rem;

@@ -35,8 +35,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="container">
                 <div class="masthead-heading text-uppercase">Face à l'épidemie du COVID-19</div>
                 <div class="masthead-subheading">Le gouvernement appelle à la mobilisation de tous</div>
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Je donne</a>
-				<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Je demande</a>
+                <a class="btn btn-primary btn-xl  js-scroll-trigger" href="#services">Je veux aider</a>
+				<a class="btn btn-primary btn-xl  js-scroll-trigger" href="#services" style="margin-left: 5px;">Besoin d'aide ?</a>
             
 			</div>
         </header>
@@ -48,28 +48,72 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <h2 class="section-heading text-uppercase">Actuellement nous avons</h2>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4">
-                        <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo count($donneurs);?> Donneurs</h5>
+
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Donneurs inscrits</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center;"><?php echo count($donneurs);?></div>
+                                    </div>
+                                    <div class="col-auto">
+                                    <i class="fas fa-users fa-2x "></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4">
-                        <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo count($demandeurs);?> Demandeurs</h5>
+                    
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Demandeurs</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center;"><?php echo count($demandeurs);?></div>
+                                    </div>
+                                    <div class="col-auto">
+                                    <i class="fas fa-users fa-2x "></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4">
-                        <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $demandes->total;?> Demandes</h5>
+
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Dossiers créés</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center;"><?php echo $demandes->total;?></div>
+                                    </div>
+                                    <div class="col-auto">
+                                    <i class="fa fa-folder-open fa-2x"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Dons effectués</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center;"><?php echo count($dons);?></div>
+                                    </div>
+                                    <div class="col-auto">
+                                    <i class="far fa-handshake fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                </div>
         </div>
                 
 </div>    
@@ -120,7 +164,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <footer class="footer py-4">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-left">Copyright © Your Website 2020</div>
+                    <div class="col-lg-4 text-lg-left">Copyright © Alhery 2020</div>
                     <div class="col-lg-4 my-3 my-lg-0">
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                     </div>

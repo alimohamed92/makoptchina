@@ -11,6 +11,13 @@ public function getNbDemandes(){
     return $demandes->result()[0];
 }
 
+public function getNbDons(){
+	$this->db->select('SUM(nb_article_traite) as total')
+			 ->from(TAB_DEMANDE);
+	$demandes = $this->db->get();
+    return $demandes->result()[0];
+}
+
 public function getNbDonneurs(){
 		
 	$this->db->select('*')
