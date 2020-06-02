@@ -33,8 +33,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		
 		<header class="masthead">
             <div class="container">
-                <div class="masthead-heading text-uppercase">Face à l'épidemie du COVID-19</div>
-                <div class="masthead-subheading">Le gouvernement appelle à la mobilisation de tous</div>
+                <div class="masthead-heading text-uppercase">Alhery</div>
+                <div class="masthead-subheading">
+                    Parce qu’aider les autres, c’est s’aider soi-même, aujourd’hui plus que jamais, les
+                    couches vulnérables de notre société ont besoin de votre aide précieuse dans un
+                    contexte de plus en plus difficile.
+                </div>
                 <a class="btn btn-primary btn-xl  js-scroll-trigger" href="#services">Je veux aider</a>
 				<a class="btn btn-primary btn-xl  js-scroll-trigger" href="#services" style="margin-left: 5px;">Besoin d'aide ?</a>
             
@@ -138,24 +142,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Conctact</h2>
-                    <h3 class="section-subheading text-muted">B3 Multimedia today</h3>
+                    <h2 class="section-heading text-uppercase">Comment ça marche ?</h2>
                 </div>
                 <div class="row text-center">
                     <div class="col-md-4">
-                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i></span>
-                        <h4 class="my-3">Adresse </h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-user-cog fa-stack-1x fa-inverse"></i></span>
+                        <h4 class="my-3">Ambassadeur </h4>
+                        <ul style="font-size: 13px;">
+                            <li> Vous êtes habitant de quartier, ONG, association...</li>
+                            <li>vous êtes au contact de personnes dans le besoin</li>
+                            <li> Demander des accès à Alhery afin d’inscrire des personnes.</li>
+                        </ul>
                     </div>
                     <div class="col-md-4">
-                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-laptop fa-stack-1x fa-inverse"></i></span>
-                        <h4 class="my-3">Telephone</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-hands-helping fa-stack-1x fa-inverse"></i></span>
+                        <h4 class="my-3">Donneur</h4>
+                        <ul style="font-size: 13px;">
+                            <li> Vous êtes un paisible citoyen, une entreprise, ONG...</li>
+                            <li> vous souhaitez porter assistance à des personnes vulnérables</li>
+                            <li> Connectez-vous (ou inscrivez-vous) pour voir la liste de personnes dans le besoin.</li>
+                        </ul>
                     </div>
                     <div class="col-md-4">
-                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-lock fa-stack-1x fa-inverse"></i></span>
-                        <h4 class="my-3">E-mail</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-hand-paper fa-stack-1x fa-inverse"></i></span>
+                        <h4 class="my-3">Demandeur</h4>
+                        <ul style="font-size: 13px;">
+                            <li> Vous êtes un citoyen dans le besoin</li>
+                            <li> Connectez-vous (ou inscrivez-vous) et formuler une demande</li>
+                            <li> Un donneur verra votre demande et vous contactera</li>
+                        </ul>
 					</div>
                 </div>
             </div>
@@ -168,7 +183,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-lg-4 my-3 my-lg-0">
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                    <div class="col-lg-4 text-lg-right"><a class="mr-3" href="#!">Privacy Policy</a><a href="#!">Terms of Use</a></div>
                 </div>
             </div>
         </footer>

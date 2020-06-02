@@ -9961,7 +9961,7 @@ p {
 }
 
 .page-section {
-  padding: 6rem 0;
+  padding: 4rem 0 0 0;
 }
 .page-section h2.section-heading {
   font-size: 2.5rem;
@@ -10099,7 +10099,7 @@ header.masthead {
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
-  height: 600px;
+  height: 500px;
 }
 header.protection {
     padding-top: 15rem;
@@ -10129,8 +10129,8 @@ header.masthead .masthead-heading {
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 17rem;
-    padding-bottom: 12.5rem;
+    /*padding-top: 17rem;
+    padding-bottom: 12.5rem;*/
   }
   header.masthead .masthead-subheading {
     font-size: 2.25rem;
