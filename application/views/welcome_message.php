@@ -128,10 +128,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Qui sommes nous</h2>
+                    <h2 class="section-heading text-uppercase">Qui sommes nous ?</h2>
                 </div>
                 <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
+                    <div class="col-lg-8 mx-auto text-center">
+                        <p class="large text-muted">
+                            Née d’un collectif de Nigériens vivant au Niger et à l’extérieur, <b>Alhery</b> est une plateforme d’entraide qui permet de mettre en relation une personne qui veut aider avec une autre qui est dans le besoin, et celà <b>en toute discrétion !</b>
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -149,7 +153,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-user-cog fa-stack-1x fa-inverse"></i></span>
                         <h4 class="my-3">Ambassadeur </h4>
                         <ul style="font-size: 13px;">
-                            <li> Vous êtes habitant de quartier, ONG, association...</li>
+                            <li> Vous êtes habitant de quartier, médecin, humanitaire, association...</li>
                             <li>vous êtes au contact de personnes dans le besoin</li>
                             <li> Demander des accès à Alhery afin d’inscrire des personnes.</li>
                         </ul>
@@ -159,6 +163,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <h4 class="my-3">Donneur</h4>
                         <ul style="font-size: 13px;">
                             <li> Vous êtes un paisible citoyen, une entreprise, ONG...</li>
+                            <li>vous êtes au Niger ou à l’extérieur</li>
                             <li> vous souhaitez porter assistance à des personnes vulnérables</li>
                             <li> Connectez-vous (ou inscrivez-vous) pour voir la liste de personnes dans le besoin.</li>
                         </ul>
@@ -167,9 +172,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-hand-paper fa-stack-1x fa-inverse"></i></span>
                         <h4 class="my-3">Demandeur</h4>
                         <ul style="font-size: 13px;">
-                            <li> Vous êtes un citoyen dans le besoin</li>
-                            <li> Connectez-vous (ou inscrivez-vous) et formuler une demande</li>
-                            <li> Un donneur verra votre demande et vous contactera</li>
+                            <li> Vous êtes en capacité d’enregistrer votre demande en tout autonomie</li>
+                            <li> vous ne pouvez pas le faire vous-même ? demander assistance à toute personne autour de vous</li>
+                            <li> Connectez-vous et enregistrer la demande d’aide en toute simplicité</li>
+                            <li> Un donneur verra votre demande et vous contactera nen toute discression</li>
                         </ul>
 					</div>
                 </div>
