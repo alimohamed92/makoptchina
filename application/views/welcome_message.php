@@ -24,32 +24,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container">
-                <img src="<?php echo base_url() ?>assets/images/logo-makoptchi-na-.png" WIDTH=180 HEIGHT=90/>
-               </a><button class="btn btn-primary" type="button">Connexion</button>
-                </div>
-            </div>
-		</nav>
+    <div class="container">
+        <img src="<?php echo base_url() ?>assets/images/logo-makoptchi-na-.png" WIDTH=180 HEIGHT=90/>
+        <a href ="<?php echo site_url('auth'); ?>" class="btn btn-primary" type="button">Connexion</a>
+    </div>
+</nav>
 		
-		<header class="masthead">
-            <div class="container">
-                <div class="masthead-heading text-uppercase">Alhery</div>
-                <div class="masthead-subheading">
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-heading text-uppercase">Alhery</div>
+        <div class="masthead-subheading">
                     Parce qu’aider les autres, c’est s’aider soi-même, aujourd’hui plus que jamais, les
                     couches vulnérables de notre société ont besoin de votre aide précieuse dans un
                     contexte de plus en plus difficile.
-                </div>
-                <a class="btn btn-primary btn-xl  js-scroll-trigger" href="#services">Je veux aider</a>
-				<a class="btn btn-primary btn-xl  js-scroll-trigger" href="#services" style="margin-left: 5px;">Besoin d'aide ?</a>
+        </div>
+        <a class="btn btn-primary btn-xl  js-scroll-trigger" href ="<?php echo site_url('auth/inscriptDon'); ?>">Je veux aider</a>
+		<a class="btn btn-primary btn-xl  js-scroll-trigger" href ="<?php echo site_url('auth/inscriptDemande'); ?>" style="margin-left: 5px;">Besoin d'aide ?</a>
             
-			</div>
-        </header>
+    </div>
+</header>
         
 <!-- Stat-->
         <section class="page-section" id="services">
             <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Actuellement nous avons</h2>
+                <div class="text-center" style="margin-bottom: 45px">
+                    <h2 class="section-heading text-uppercase" >Actuellement nous avons</h2>
                 </div>
                 <div class="row">
 
@@ -127,13 +126,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- Qui sommes nous-->
 <section class="page-section" id="services">
             <div class="container">
-                <div class="text-center">
+                <div class="text-center" style="margin-bottom: 45px">
                     <h2 class="section-heading text-uppercase">Qui sommes nous ?</h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-8 mx-auto text-center">
                         <p class="large text-muted">
-                            Née d’un collectif de Nigériens vivant au Niger et à l’extérieur, <b>Alhery</b> est une plateforme d’entraide qui permet de mettre en relation une personne qui veut aider avec une autre qui est dans le besoin, et celà <b>en toute discrétion !</b>
+                            Née d’un collectif de Nigériens vivant au Niger et à l’extérieur, <b>Alhery</b> est une plateforme d’entraide qui permet de mettre en relation une personne qui veut aider avec une autre qui est dans le besoin, et cela <b>en toute discrétion !</b>
                         </p>
                     </div>
                 </div>
@@ -145,38 +144,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<!-- Services-->
         <section class="page-section" id="services">
             <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Comment ça marche ?</h2>
+                <div class="text-center" style="margin-bottom: 45px">
+                    <h2 class="section-heading text-uppercase">Comment ça marche ? <i class="fas fa-download"></i></h2>
                 </div>
                 <div class="row text-center">
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-user-cog fa-stack-1x fa-inverse"></i></span>
-                        <h4 class="my-3">Ambassadeur </h4>
-                        <ul style="font-size: 13px;">
-                            <li> Vous êtes habitant de quartier, médecin, humanitaire, association...</li>
-                            <li>vous êtes au contact de personnes dans le besoin</li>
-                            <li> Demander des accès à Alhery afin d’inscrire des personnes.</li>
-                        </ul>
+                        <h4 class="my-3" style="margin-top: 0px !important;" >Ambassadeur </h4>
+                        <p class="text-muted">
+                            <b>1- Vous êtes</b> habitant de quartier, médecin, humanitaire, association...
+                            <b>2- Vous êtes</b> au contact de personnes dans le besoin.
+                            <b>3- Demander des accès </b> à Alhery afin d’inscrire des personnes.
+                        </p>
+                       
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-hands-helping fa-stack-1x fa-inverse"></i></span>
-                        <h4 class="my-3">Donneur</h4>
-                        <ul style="font-size: 13px;">
-                            <li> Vous êtes un paisible citoyen, une entreprise, ONG...</li>
-                            <li>vous êtes au Niger ou à l’extérieur</li>
-                            <li> vous souhaitez porter assistance à des personnes vulnérables</li>
-                            <li> Connectez-vous (ou inscrivez-vous) pour voir la liste de personnes dans le besoin.</li>
-                        </ul>
+                        <h4 class="my-3" style="margin-top: 0px !important;">Donneur</h4>
+                        <p class="text-muted">
+                            <b> 1- Vous êtes </b> un paisible citoyen, une entreprise, ONG...
+                            <b> 2- Vous êtes </b> au Niger ou à l’extérieur.
+                            <b> 3- Vous souhaitez </b> porter assistance à des personnes vulnérables.
+                            <b> 4- Connectez-vous </b> (ou inscrivez-vous) pour voir la liste de personnes dans le besoin.
+                        </p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-hand-paper fa-stack-1x fa-inverse"></i></span>
-                        <h4 class="my-3">Demandeur</h4>
-                        <ul style="font-size: 13px;">
-                            <li> Vous êtes en capacité d’enregistrer votre demande en tout autonomie</li>
-                            <li> vous ne pouvez pas le faire vous-même ? demander assistance à toute personne autour de vous</li>
-                            <li> Connectez-vous et enregistrer la demande d’aide en toute simplicité</li>
-                            <li> Un donneur verra votre demande et vous contactera nen toute discression</li>
-                        </ul>
+                        <h4 class="my-3" style="margin-top: 0px !important;">Demandeur</h4>
+                        <p class="text-muted">
+                            <b> 1- Vous êtes </b> en capacité d’enregistrer votre demande en tout autonomie
+                            <b> 2- Vous ne pouvez pas </b> le faire vous-même ? demander assistance à toute personne autour de vous</li>
+                            <b> 3- Connectez-vous </b> et enregistrer la demande d’aide en toute simplicité
+                            <b> 4- Un donneur </b> verra votre demande et vous contactera <b>en toute discression</b>
+                        </p>
 					</div>
                 </div>
             </div>
@@ -189,9 +189,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-lg-4 my-3 my-lg-0">
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                     </div>
+                    <div class="col-lg-4 text-lg-right"><a class="mr-3" href="#" data-toggle="modal" data-target="#exampleModalScrollable">Notre politique de confidentialité</a></div>
                 </div>
             </div>
         </footer>
+
+        <!-- Modal -->
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Information de confidentialité</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 		<!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

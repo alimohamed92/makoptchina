@@ -19,9 +19,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    <div class="row">
    		<div class="col-md-4"></div>
         <div class="col-md-4" style="margin-top: 10px; margin-left: 25px">
-			 <img  src="<?php echo base_url() ?>assets/images/logo.png" class="image-custum" >
-			 <!--img  src="<?php echo base_url() ?>assets/images/icons8-twitter-64.png" class="image-custum" -->
-        </div>
+          <a href ="<?php echo site_url(''); ?>">
+            <img  src="<?php echo base_url() ?>assets/images/logo.png" class="image-custum" >
+          </a>
+			  </div>
 	</div>
 	<div class="row" style="margin-top: 25px;">
    	<div class="col-md-4"></div>
