@@ -92,6 +92,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   ?>
                 </select>
               </div>
+              <input type="hidden" id="urlredirect" value="<?php echo site_url('auth'); ?>">
 
               <div class="form-group">
                 <textarea class="form-control" style="height: 50px;" id="autre" name="autre" placeholder="Autres besoins"></textarea>
@@ -99,7 +100,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <button style="height: 40px;" 
                   data-url="<?php echo site_url('auth/villes'); ?>" 
                   data-posturl="<?php echo site_url('auth/inscriptDemande'); ?>"
-                  data-redirect ="<?php site_url('auth'); ?>"
                   id="valid" class="btn" type ="submit">Valider</button> 
             </form> </br>
             <div id="info"></div>

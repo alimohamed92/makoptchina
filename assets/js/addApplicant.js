@@ -8,7 +8,8 @@ $(document).ready(function() {
     var allInputs = $( ":input" );
     var $villes = [];
     var allInputAreValid =false;
-    var redirect_url = $("#valid").data('redirect');
+    var redirect_url = $("#urlredirect").val();
+    
 
     $.get(url,function(data){
         $villes = JSON.parse(data);
@@ -125,7 +126,10 @@ $(document).ready(function() {
         var html = data.result ? '<em class="alert-success">' : '<em class="alert-danger">';
         html += data.msg+'</em>';
         if(data.msg == "login_redirect"){
-            window.location.href = redirect_url; 
+            /*window.location.href = redirect_url; */
+            console.log(redirect_url);
+            $(location).attr('href',redirect_url);
+
         }
         else{
             $("#msg").html(html);

@@ -65,6 +65,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <button style="height: 40px;" 
                   data-url="<?php echo site_url('auth/villes'); ?>" 
                   data-posturl="<?php echo site_url('auth/inscriptDon'); ?>" 
+                  data-urlredirect="<?php echo site_url('auth'); ?>"
                   id="valid" class="btn" type ="button">Valider
                 </button> 
 

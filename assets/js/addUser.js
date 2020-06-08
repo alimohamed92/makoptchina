@@ -7,6 +7,7 @@ $(document).ready(function() {
     var allInputs = $( ":input" );
     var $villes = [];
     var allInputAreValid =false;
+    var redirect_url = $("#valid").data('urlredirect');
 
     $.get(url,function(data){
         $villes = JSON.parse(data);
@@ -85,7 +86,8 @@ $(document).ready(function() {
           $.post(postUrl,
           {'user' : buildGeneralParams()},
           function(data){
-            displayMessage(JSON.parse(data));
+            $(location).attr('href',redirect_url);
+            //displayMessage(JSON.parse(data));
             //$("#info").html('<em>'+msg+'</em>');
           }); 
         }
