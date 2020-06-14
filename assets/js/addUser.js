@@ -86,8 +86,11 @@ $(document).ready(function() {
           $.post(postUrl,
           {'user' : buildGeneralParams()},
           function(data){
-            $(location).attr('href',redirect_url);
-            //displayMessage(JSON.parse(data));
+            data = JSON.parse(data);
+            if(data.result) {
+                $(location).attr('href',redirect_url);
+            } 
+            displayMessage(data);
             //$("#info").html('<em>'+msg+'</em>');
           }); 
         }

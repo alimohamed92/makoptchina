@@ -39,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="row col-md-12" >
         <div class ="col-md-4"></div>
 		    <div class="col-md-4" style="background-color: #e9ecef; margin-left: 25px">
-		 
+        <div id="info"></div>
           <form >
                 <legend class="title"><b> Inscription</b></legend>
                 <div class="form-group">
@@ -72,7 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </button> 
 
           </form> </br>
-          <div id="info"></div>
+          
         </div> 
       </div>
   </div>
