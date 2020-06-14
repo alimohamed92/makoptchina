@@ -18,17 +18,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container">
    <div class="row">
    		<div class="col-md-4"></div>
-        <div class="col-md-4" style="margin-top: 10px; margin-left: 25px">
+        <div class="col-md-4" style="margin-top: 10px;">
           <a href ="<?php echo site_url(''); ?>">
-            <img  src="<?php echo base_url() ?>assets/images/logo.png" class="image-custum" >
+            <img  src="<?php echo base_url() ?>assets/images/logo-alhery.png" class="image-custum" >
           </a>
 			  </div>
 	</div>
 	<div class="row" style="margin-top: 25px;">
    	<div class="col-md-4"></div>
-		<div class="col-md-4" style="margin-left: 25px">
-			<a href ="<?php echo site_url('auth/inscriptDon'); ?>" class="btn" >Je veux aider</a> 
-			<a href ="<?php echo site_url('auth/inscriptDemande'); ?>" type="button" class="btn" style="margin-left: 10px;">Besoin d'aide ?</a>
+		<div class="col-md-4 div-btn">
+      <div style ="text-align: center;">
+        <a href ="<?php echo site_url('auth/inscriptDon'); ?>" class="btn" >Je veux aider</a> 
+        <a href ="<?php echo site_url('auth/inscriptDemande'); ?>" type="button" class="btn" style="margin-left: 10px;">Besoin d'aide ?</a>
+      </diV>
     </div>
   </div>
 

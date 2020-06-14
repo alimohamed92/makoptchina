@@ -27,3 +27,9 @@ body{
     margin-left: auto;
     margin-right: auto
 }
+
+@media (min-width: 766px) {
+    .div-btn {
+        margin-left: 10px;
+    }
+  }
