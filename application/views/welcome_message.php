@@ -25,18 +25,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-        <img src="<?php echo base_url() ?>assets/images/logo-makoptchi-na-.png" WIDTH=180 HEIGHT=90/>
-        <a href ="<?php echo site_url('auth'); ?>" class="btn btn-primary" type="button">Connexion</a>
+        <img src="<?php echo base_url() ?>assets/images/logo-alhery.png"/>
+        <a href ="<?php echo site_url('auth'); ?>" class="btn btn-primary btn-xl" type="button">Connexion</a>
     </div>
 </nav>
 		
 <header class="masthead">
     <div class="container">
         <div class="masthead-heading text-uppercase">Alhery</div>
-        <div class="masthead-subheading">
-                    Parce qu’aider les autres, c’est s’aider soi-même, aujourd’hui plus que jamais, les
-                    couches vulnérables de notre société ont besoin de votre aide précieuse dans un
-                    contexte de plus en plus difficile.
+        <div class="masthead-subheading" style="margin-bottom: 115px;">
+                    Aidons les couches vulnérables de notre société !
         </div>
         <a class="btn btn-primary btn-xl  js-scroll-trigger" href ="<?php echo site_url('auth/inscriptDon'); ?>">Je veux aider</a>
 		<a class="btn btn-primary btn-xl  js-scroll-trigger" href ="<?php echo site_url('auth/inscriptDemande'); ?>" style="margin-left: 5px;">Besoin d'aide ?</a>

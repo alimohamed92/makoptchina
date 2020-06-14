@@ -2459,8 +2459,8 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: #fd9e2d;
+  border-color: #fd9e2d;
 }
 .btn-primary:hover {
   color: #fff;
@@ -10093,13 +10093,13 @@ header.masthead {
   padding-top: 10.5rem;
   padding-bottom: 6rem;
   text-align: center;
-  color: #fff;
-  background-image: url("../images/accueil.png");
+  color: #0b6868;
+  background-image: url("../images/accueil.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-position: center center;
+  background-position: bottom;
   background-size: cover;
-  height: 500px;
+  /*height: 500px;*/
 }
 header.protection {
     padding-top: 15rem;
