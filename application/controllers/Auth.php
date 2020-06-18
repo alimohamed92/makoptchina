@@ -209,7 +209,8 @@ class Auth extends CI_Controller
 		$smsParams = array(
 						'token'=>'',
 						'message' => $message,
-						'destinataire' => $tel
+						'destinataire' => $tel,
+						'expediteur' => 257
 					 );		
 	 	
 		$result = $this->httpPost($urlAuth,$data);
