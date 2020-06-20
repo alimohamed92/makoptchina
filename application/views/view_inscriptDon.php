@@ -24,15 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </a>
         </div>
 	</div>
-	<div class="row" style="margin-top: 25px;">
-   	<div class="col-md-4"></div>
-		<div class="col-md-4 div-btn">
-      <div style ="text-align: center;">
-        <a href ="<?php echo site_url('auth/inscriptDemande'); ?>" class="btn" >Besoin d'aide ?</a> 
-        <a href ="<?php echo site_url('auth'); ?>" type="button" class="btn" style="margin-left: 10px;">Connexion</a>
-      </div>
-    </div>
-  </div>
+	
 
 
   <div id="connexion" style="margin-top: 25px;">
@@ -41,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		    <div class="col-md-4" style="background-color: #e9ecef; margin-left: 25px">
         <div id="info"></div>
           <form >
-                <legend class="title"><b> Inscription</b></legend>
+                <legend class="title green"><b> Inscrivez-vous et faites des dons</b></legend>
                 <div class="form-group">
                   <input style="height: 50px;" type="tel" name="tel" placeholder="Tél *" id="tel"  class="form-control">
                 </div>
@@ -69,9 +61,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   data-posturl="<?php echo site_url('auth/inscriptDon'); ?>" 
                   data-urlredirect="<?php echo site_url('auth'); ?>"
                   id="valid" class="btn" type ="button">Valider
-                </button> 
+                </button> <br><br>
+
+                 <p> Vous avez déjà un compte : <a href="<?php echo site_url('auth'); ?>" class="green"> se connecter </a>
 
           </form> </br>
+
           
         </div> 
       </div>

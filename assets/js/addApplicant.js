@@ -63,7 +63,7 @@ $(document).ready(function() {
             tel: {
                 required : true,
                 minlength: 8,
-                maxlength : 8
+                maxlength : 10
             },
             quartier : "required",
             nbr_personne : "required",

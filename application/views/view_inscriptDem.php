@@ -27,15 +27,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </a>
         </div>
 	</div>
-	<div class="row" style="margin-top: 25px;">
-   	<div class="col-md-4"></div>
-    <div class="col-md-4 ">
-      <div style ="text-align: center;">
-        <a href ="<?php echo site_url('auth/inscriptDon'); ?>" class="btn" >Je veux aider</a> 
-        <a href ="<?php echo site_url('auth'); ?>" type="button" class="btn" style="margin-left: 10px;">Connexion</a>
-      </div>
-    </div>
-  </div>
 
 
   <div id="connexion" style="margin-top: 25px;">
@@ -45,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		 <!-- Formulaire A completer !-->
             <div class="" id="msg"> </div>
             <form method="post" id="registration">
-              <legend class="title"><b> Inscription</b></legend>
+              <legend class="title green"><b> Inscrivez-vous et recevez de l'aide</b></legend>
               <div class="form-group">
                 <label for="tel"></label>
                 <input style="height: 50px;" type="text" name="tel" placeholder="Numéro de Téléphone" id="tel" class="form-control"> </p>
@@ -103,8 +94,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   data-url="<?php echo site_url('auth/villes'); ?>" 
                   data-posturl="<?php echo site_url('auth/inscriptDemande'); ?>"
                   id="valid" class="btn" type ="submit">Valider</button> 
-            </form> </br>
+            </form> 
+             </br>
             <div id="info"></div>
+            <p> Vous avez déjà un compte : <a href="<?php echo site_url('auth'); ?>" class="green"> se connecter </a>
           </div> 
           
       </div>

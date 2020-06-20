@@ -17,3 +17,21 @@
   color: #842e1b !important;
   font-weight: bold;
 }
+
+.orange {
+	color: #fd7e14 !important ;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #fd9e2d;
+  border-color: #fd9e2d;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #fec810;
+  border-color: #fec503;
+}
+.green {
+  color : #0b6868 !important;
+}
