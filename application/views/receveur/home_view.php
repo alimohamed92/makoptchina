@@ -5,7 +5,7 @@
                 <th>Tél</th>
                 <th>Quartier</th>
                 <th>Demande</th>
-                <th><span class="fa fa-cogs"></span></th>
+                <th>Aider</th>
                         
             </tr>
         </thead>
@@ -27,7 +27,7 @@
                             </i> 
                         </a>
                         <a href="<?php echo site_url("receveur/detailsDemande").'?tel='.$demande['tel']?>">
-                            <i class="fa fa-sign-in" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Suivre cette demande"></i>
+                            <i class="fa fa-sign-in" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Participer à cette demande"></i>
                         </a>
                     </td>
                 </tr>

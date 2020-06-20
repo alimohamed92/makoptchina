@@ -1,5 +1,6 @@
 <div id="demContent">
-<?php if(sizeof($articles) == 0) { ?> <h5 class="alert alert-primary" role="alert"> Aucun article associé à cette demande; </h5> <?php }?>
+    <?php if(sizeof($articles) == 0) { ?> <h5 class="alert alert-primary" role="alert"> Aucun article associé à cette demande; </h5> <?php }?>
+    <?php if(sizeof($articles) > 0) { ?> <h6 class="alert alert-info" role="alert"> Demandeur joignable au <b><?php echo $articles[0]['user_tel']; ?>; </b></h6> <?php }?>
     <div class="list-group">
         <table>
         <?php foreach ($articles as $article) { ?>
@@ -22,13 +23,13 @@
                                     echo $article['comment']; 
                                 } 
                                 else {
-                                    echo 'Pourriez-vous m’assister avec un peu de'.$article['nom'].' selon vos capacités ?';
+                                    echo 'Voudriez-vous m’assister selon vos capacités avec : '.$article['nom'].' ?';
                                 }
                             ?>
                         </p>
                         <div class = "row">
                                 <div class="col-md-12">
-                                    <small style=" text-align:left"  class="text-muted">Merci de votre soutien</small><br>
+                                    <small style=" text-align:left"  class="text-muted">Merci de votre générosité !</small><br>
                                     <small  style="float: right;"><?php echo explode(" ", $article['date'])[0]?></small>
                                 </div>
                         </div>

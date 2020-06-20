@@ -64,7 +64,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
               <div class="form-group">
                 <label for="nbr_personne"></label>
-                <input style="height: 50px;" type="number" placeholder="Nombre de personnes dans le foyer" name="nbr_personne" id="nbr_personne" class="form-control" min="1" max="10" >
+                <input style="height: 50px;" type="number" placeholder="Nbr de personnes dans le foyer" name="nbr_personne" id="nbr_personne" class="form-control" min="1" max="10" >
               </div> 
               <div class="form-group">
                 <label for="items"></label>
@@ -97,7 +97,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </form> 
              </br>
             <div id="info"></div>
-            <p> Vous avez déjà un compte : <a href="<?php echo site_url('auth'); ?>" class="green"> se connecter </a>
+            <p> Déjà utilisateur ? <a href="<?php echo site_url('auth'); ?>" class="green"> se connecter </a>
           </div> 
           
       </div>

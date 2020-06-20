@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <?php echo form_open("auth");?>
               <legend class="title green"><b> Connectez vous </b></legend>
               <div class="form-group">
-                <input style="height: 50px;" type="text" name="login" placeholder="Numéro de tél" id="login" value="<?php set_value('login')?>" class="form-control">
+                <input style="height: 50px;" type="tel" name="login" placeholder="Numéro de tél" id="login" value="<?php set_value('login')?>" class="form-control">
                 <?php echo form_error('login','<div class="error">','</div>') ?>
               </div>
               <div class="form-group">
@@ -47,8 +47,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <button style="height: 40px; " class="btn btn-primary" type="submit"> Se connecter <i class="fas fa-sign-in-alt"></i></button> 
               <a href="" data-toggle="modal" data-target="#exampleModal" style =" margin-left: 30px;" class="green">Mot de pass oublié</a>
               <br><br>
-              <p style="text-align:center;">Aidez vos proches en vous inscrivant <a href ="<?php echo site_url('auth/inscriptDon'); ?>" class="green">ici</a></p>
-              <p style="text-align:center;" >Demander un soutien en vous inscrivant <a href ="<?php echo site_url('auth/inscriptDemande'); ?>" class="green">ici</a></p>
+              <p >Envie d'aider ? <a href ="<?php echo site_url('auth/inscriptDon'); ?>" class="green">Inscrivez-vous</a></p>
+              <p >Besoin d'aide ? <a href ="<?php echo site_url('auth/inscriptDemande'); ?>" class="green">Inscrivez-vous</a></p>
 
             <?php echo form_close();?> </br>
           </div> 

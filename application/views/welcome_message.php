@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
         <img src="<?php echo base_url() ?>assets/images/logo-alhery.png"/>
-        <a href ="<?php echo site_url('auth'); ?>" class="btn btn-primary btn-xl" type="button">Connexion <i class="fas fa-sign-in-alt"></i></a>
+        <a href ="<?php echo site_url('auth'); ?>" class="btn btn-primary btn-xl" type="button"><?php if($this->session->userdata('log_user')==true) { echo 'Mon espace';} else { echo 'Connexion'; }?> <i class="fas fa-sign-in-alt"></i></a>
     </div>
 </nav>
 		
@@ -36,8 +36,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="masthead-subheading" style="margin-bottom: 115px;">
                     Aidons les couches vulnérables de notre société !
         </div>
-        <a class="btn btn-primary btn-xl  js-scroll-trigger" href ="<?php echo site_url('auth/inscriptDon'); ?>">Je veux aider <i class="fas fa-hands-helping"></i></a>
-		<a class="btn btn-primary btn-xl  js-scroll-trigger" href ="<?php echo site_url('auth/inscriptDemande'); ?>" style="margin-left: 5px;">J'ai Besoin d'aide <i class="fas fa-hand-holding"></i></a>
+        <a class="btn btn-primary btn-xl  js-scroll-trigger mobil-btn" href ="<?php echo site_url('auth/inscriptDon'); ?>">Je veux aider <i class="fas fa-hands-helping"></i></a>
+		<a class="btn btn-primary btn-xl  js-scroll-trigger mobil-btn"   href ="<?php echo site_url('auth/inscriptDemande'); ?>" style="margin-left: 5px;">J'ai Besoin d'aide <i class="fas fa-hand-holding"></i></a>
             
     </div>
 </header>
@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-lg-8 mx-auto text-center">
                         <p class="large text-muted">
                             Née d’un collectif de Nigériens vivant au Niger et à l’extérieur, <b>Alhery</b> est une plateforme d’entraide qui permet de mettre en relation une personne qui veut aider avec une autre qui est dans le besoin, et cela <b>en toute discrétion !</b>
+                            </br> <a href="#" class="text-primary">contact@ahery.com</a>
                         </p>
                     </div>
                 </div>
@@ -71,7 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Donneurs inscrits</div>
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 text-center">Donneurs</div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center;"><?php echo count($donneurs);?></div>
                                     </div>
                                     <div class="col-auto">
@@ -87,7 +88,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Demandeurs</div>
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 text-center">Demandeurs</div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center;"><?php echo count($demandeurs);?></div>
                                     </div>
                                     <div class="col-auto">
@@ -103,7 +104,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Dossiers créés</div>
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 text-center">Dossiers créés</div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center;"><?php echo $demandes->total;?></div>
                                     </div>
                                     <div class="col-auto">
@@ -119,7 +120,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Dons effectués</div>
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 text-center">Dons effectués</div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center;"><?php echo $dons->total;?></div>
                                     </div>
                                     <div class="col-auto">
@@ -149,11 +150,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-user-cog fa-stack-1x fa-inverse"></i></span>
                         <h4 class="my-3 text-primary" style="margin-top: 0px !important;" >Ambassadeur </h4>
                         <p class="text-muted">
-                            <ol>
-                            <li><b>Vous êtes</b> habitant de quartier, médecin, humanitaire, association...</li>
-                            <li><b>Vous êtes</b> au contact de personnes dans le besoin.</li>
-                            <li><b>Demander des accès </b> à Alhery afin d’inscrire des personnes.</li>
-                        </ol>
+                            <ol style="text-align: left;">
+                                <li><b>Vous êtes</b> habitant de quartier, médecin, humanitaire, association...</li>
+                                <li><b>Vous êtes</b> au contact de personnes dans le besoin.</li>
+                                <li><b>Demander des accès </b> à Alhery afin d’inscrire des personnes.</li>
+                            </ol>
                         </p>
                        
                     </div>
@@ -161,24 +162,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-hands-helping fa-stack-1x fa-inverse"></i></span>
                         <h4 class="my-3 text-primary" style="margin-top: 0px !important;">Donneur</h4>
                         <p class="text-muted">
-                            <ol>
-                            <li><b> Vous êtes </b> un paisible citoyen, une entreprise, ONG...</li>
-                            <li><b>Vous êtes </b> au Niger ou à l’extérieur.</li>
-                            <li><b>Vous souhaitez </b> porter assistance à des personnes vulnérables.</li>
-                            <li><b>Connectez-vous </b> (ou inscrivez-vous) pour voir la liste de personnes dans le besoin.</li>
-                        </ol>
+                            <ol style="text-align: left;">
+                                <li><b> Vous êtes </b> un paisible citoyen, une entreprise, ONG...</li>
+                                <li><b>Vous êtes </b> au Niger ou à l’extérieur.</li>
+                                <li><b>Vous souhaitez </b> porter assistance à des personnes vulnérables.</li>
+                                <li><b>Connectez-vous </b> (ou inscrivez-vous) pour voir la liste de personnes dans le besoin.</li>
+                            </ol>
                         </p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-hand-paper fa-stack-1x fa-inverse"></i></span>
                         <h4 class="my-3 text-primary" style="margin-top: 0px !important;">Demandeur</h4>
                         <p class="text-muted">
-                            <ol>
-                            <li><b> Vous êtes </b> en capacité d’enregistrer votre demande en tout autonomie</li>
-                            <li><b> Vous ne pouvez pas </b> le faire vous-même ? demander assistance à toute personne autour de vous</li>
-                            <li><b> Connectez-vous </b> et enregistrer la demande d’aide en toute simplicité</li>
-                            <li><b>Un donneur </b> verra votre demande et vous contactera <b>en toute discression</b></li>
-                        </ol>
+                            <ol style="text-align: left;">
+                                <li><b> Vous êtes </b> en capacité d’enregistrer votre demande en tout autonomie</li>
+                                <li><b> Vous ne pouvez pas </b> le faire vous-même ? demander assistance à toute personne autour de vous</li>
+                                <li><b> Connectez-vous </b> et enregistrer la demande d’aide en toute simplicité</li>
+                                <li><b>Un donneur </b> verra votre demande et vous contactera <b>en toute discression</b></li>
+                            </ol>
                         </p>
 					</div>
                 </div>
@@ -190,7 +191,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="row align-items-center">
                     <div class="col-lg-4 text-lg-left text-primary">Copyright © Alhery 2020</div>
                     <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-orange btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-orange btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-orange btn-social mx-2 " href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-orange btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-orange btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-orange btn-social mx-2 " href="mailto: contact@ahery.com"><i class="far fa-envelope"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-right"><a class="mr-3 text-primary" href="#" data-toggle="modal" data-target="#exampleModalScrollable">Notre politique de confidentialité</a></div>
                 </div>

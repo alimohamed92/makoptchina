@@ -21,7 +21,7 @@
     $(document).ready(function() {
           $('#example').DataTable({
             "language": {
-                "url": "/mkpt/assets/js/dataTables.fr.lang"
+                "url": "/assets/js/dataTables.fr.lang"
             }
           });
       } );

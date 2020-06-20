@@ -66,7 +66,7 @@ $(document).ready(function() {
                 maxlength : 10
             },
             quartier : "required",
-            nbr_personne : "required",
+            //nbr_personne : "required",
             items : "required",
             pwd: {
                 required: true,
@@ -94,8 +94,8 @@ $(document).ready(function() {
                 minlength: "Le mot de passe doit contenir au moins 8 charactères",
                 equalTo : 'Le mot de passe ne correspond pas'
             },
-            items : "Sélectionner les articles dont vous avez besoin", 
-            nbr_personne: "Renseigner le nombre de personne dont vous êtes en charge"
+            items : "Sélectionner les articles dont vous avez besoin"//, 
+            //nbr_personne: "Renseigner le nombre de personne dont vous êtes en charge"
         },
         submitHandler: function(form) {
             $.post(postUrl,{'user' : buildGeneralParams()},function(data){

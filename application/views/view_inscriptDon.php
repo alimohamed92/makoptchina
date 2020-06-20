@@ -63,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   id="valid" class="btn" type ="button">Valider
                 </button> <br><br>
 
-                 <p> Vous avez déjà un compte : <a href="<?php echo site_url('auth'); ?>" class="green"> se connecter </a>
+                 <p> Déjà utilisateur ? <a href="<?php echo site_url('auth'); ?>" class="green"> se connecter </a>
 
           </form> </br>
 

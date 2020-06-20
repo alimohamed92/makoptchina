@@ -17,18 +17,18 @@
                             <h5 class="mb-1">Demande de <?php echo $article['nom'] ?></h5>
                         </div>
                         <p class="mb-1">
-                            <?php 
+                            <?php /*
                                 if($article['comment']) {
                                     echo $article['comment']; 
                                 } 
                                 else {
                                     echo 'Pourriez-vous m’assister avec un peu de'.$article['nom'].' selon vos capacités ?';
                                 }
-                            ?>
+                            */?>
                         </p>
                         <div class = "row">
                                 <div class="col-md-12">
-                                    <small style=" text-align:left"  class="text-muted">Merci de votre soutien</small><br>
+                                    <!--small style=" text-align:left"  class="text-muted">Merci de votre soutien</small><br-->
                                     <small  style="float: right;"><?php echo explode(" ", $article['date'])[0]?></small>
                                 </div>
                         </div>

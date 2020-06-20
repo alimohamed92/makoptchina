@@ -20,7 +20,7 @@ class Auth extends CI_Controller
 
 		if(  $this->session->userdata('log_receveur')==true ){
 			
-			redirect(site_url('receveur/accueil'));
+			redirect(site_url('receveur/'));
 		}
 		elseif ( $this->session->userdata('log_donneur')) {
 			redirect(site_url('donneur/'));
@@ -30,8 +30,9 @@ class Auth extends CI_Controller
 		}
 		//sinon
 		else{
-			$this->form_validation->set_rules('login', 'login', 'trim|required');
-	        $this->form_validation->set_rules('mp', 'mot de passe', 'trim|required');
+			$this->form_validation->set_rules('login', 'numéro de tél', 'trim|required');
+			$this->form_validation->set_rules('mp', 'mot de passe', 'trim|required');
+			$this->form_validation->set_message('required', 'Le %s est obligatoire');
 	        if($this->form_validation->run()==true){ 
 				$res=$this->user->getCompte($this->input->post('login'),$this->input->post('mp'));
 				//var_dump($res);

@@ -101,7 +101,7 @@ class Model_user extends CI_Model
         ->where('v.id_ville', $idVille)
         ->where('u.dt_archive is NULL')
         ->where('d.dt_archive is NULL')
-        ->order_by('quartier', 'asc')
+        ->order_by('d.date', 'asc')
         ->get()
         ->result_array();
         return  $res;
@@ -116,7 +116,7 @@ class Model_user extends CI_Model
         ->where('v.id_ville', $idVille)
         ->where('d.etat', EN_ATTENTE)
         ->where('u.dt_archive is NULL')
-        ->order_by('quartier', 'asc')
+        ->order_by('d.date', 'asc')
         ->get()
         ->result_array();
         return  $res;
