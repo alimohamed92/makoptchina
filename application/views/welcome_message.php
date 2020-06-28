@@ -32,7 +32,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		
 <header class="masthead">
     <div class="container">
-        <div class="masthead-heading text-uppercase">Alhery</div>
+    <!--video autoplay muted loop id="myVideo">
+        <source src="<?php echo base_url() ?>assets/images/alhery.mp4" type="video/mp4">
+    </video-->
+            <div class="masthead-heading text-uppercase">Alhery</div>
         <div class="masthead-subheading" style="margin-bottom: 115px;">
                     Aidons les couches vulnérables de notre société !
         </div>
@@ -52,7 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-lg-8 mx-auto text-center">
                         <p class="large text-muted">
                             Née d’un collectif de Nigériens vivant au Niger et à l’extérieur, <b>Alhery</b> est une plateforme d’entraide qui permet de mettre en relation une personne qui veut aider avec une autre qui est dans le besoin, et cela <b>en toute discrétion !</b>
-                            </br> <a href="#" class="text-primary">contact@ahery.com</a>
+                            </br> <a href="mailto: contact@ahery.com" class="text-primary">contact@ahery.com</a>
                         </p>
                     </div>
                 </div>
@@ -209,7 +212,55 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </button>
       </div>
       <div class="modal-body">
-        ...
+     <b> 1. Généralités </b> </br></br>
+Alhery attache une grande importance à la protection et au respect de votre vie privée. La présente politique vise à vous informer de nos pratiques concernant la collecte, l’utilisation et le partage des informations que vous êtes amenés à nous fournir par le biais de notre plateforme accessible depuis le site internet https://www.alhery.com/.
+
+    </br></br><b> 2. Les informations que nous recueillons </b> </br>
+Nous sommes susceptibles de recueillir et de traiter les données suivantes : numéro de téléphone, mot de passe et quartier de résidence. Ces informations sont obligatoires. À défaut, Alhery ne sera pas en mesure de vous fournir les services proposés par sur la plateforme et vous ne serez pas autorisés à créer de compte sur cette dernière.
+Nous pouvons également être amenés à recueillir dans certains cas les données suivantes :
+<ul>
+    <li>	Le détail de vos visites sur la Plateforme et des contenus auxquels vous avez accédé ;</li>
+    <li>	Les données que nous pouvons vous demander de fournir lorsque vous nous signalez un problème relatif à notre Plateforme ou à nos services, comme par exemple l’objet de votre demande d’assistance ;</li>
+    <li>	Les données que nous recueillons automatiquement</li>
+</ul>
+Les Données Personnelles telles que votre numéro de téléphone sont automatiquement désactivées après clôture de votre compte. Les données utilisées pour des raisons statistiques (telles que la nature des aides) sont cependant archivées, sauf si vous en demandiez la suppression.
+
+</br></br><b> 3-a. Utilisation des données que nous recueillons </b> </br>
+Nous utilisons les données que nous recueillons afin de :
+<ul>
+    <li> Vous fournir les informations et services demandés ;</li>
+    <li> Vous permettre de communiquer et d’échanger avec les autres membres : donneur, récipiendaires ou ambassadeur ; </li>
+    <li> Vous informer des modifications apportées à nos services ;</li>
+    <li> Améliorer et optimiser notre Plateforme, notamment pour nous assurer de ce que l’affichage de nos contenus est adapté à votre appareil ;</li>
+    <li> Les données collectées ne sont pas utilisées à des fins commerciales ! </b> </li>
+</ul>
+</br><b> 3-b. Visibilité des données </b> </br>
+<ul>
+    <li> Les données (numéro de téléphone, quartier…) des <b>demandeurs</b> sont uniquement visibles aux donneurs et ambassadeurs afin qu’ils puissent être contactés et bénéficier des aides souhaitées.</li>
+    <li> Les données (numéro de téléphone, quartier…) des <b> donneurs</b>  restent <b> invisibles</b> aux demandeurs.</li>
+</ul>
+
+
+</br><b> 4. Vos droits sur vos données personnelles </b> </br>
+Vous disposez du droit de recevoir une copie, de demander la modification ou la suppression de vos Données Personnelles en notre possession (« droit d’accès » et (« droit d’effacement et droit de rectification »). 
+
+</br></br><b> 5. Confidentialité de votre mot de passe</b> </br>
+Vous êtes responsable de la confidentialité du mot de passe que vous avez choisi pour accéder à votre compte sur Alhery. Vous vous engagez à conserver ce mot de passe secret et à ne le communiquer à personne.</br>
+
+</br><b> 6. Liens vers d’autres sites internet et réseaux sociaux </b> </br>
+Notre Plateforme peut contenir des liens vers nos pages sur les réseaux sociaux. Veuillez noter que ces sites internet ont leur propre politique de confidentialité et que nous déclinons toute responsabilité quant à l’utilisation faite par ces sites des informations collectées lorsque vous cliquez sur ces liens. Nous vous invitons à prendre connaissance de politiques de confidentialité de ces sites avant de leur transmettre vos Données Personnelles.
+
+</br></br><b> 7. Modification de notre politique de confidentialité </b> </br>
+Nous pouvons être amenés à modifier occasionnellement la présente politique de confidentialité. Lorsque cela est nécessaire, nous vous en informerons et/ou solliciterons votre accord. Nous vous conseillons de consulter régulièrement cette page pour prendre connaissance des éventuelles modifications ou mises à jour apportées à notre politique de confidentialité.
+
+</br></br><b> 8. Nous contacter </b> </br>
+Pour toute question relative à la présente politique de confidentialité ou pour toute demande relative à vos données personnelles, vous pouvez nous contacter en
+adressant un email à l’adresse <a href ="mailto: contact@ahery.com">contact@alhery.com</a>
+
+
+
+</br></br><i> Version mise à jour le 28 juin 2020 </i> 
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button>

@@ -4,7 +4,8 @@
             <tr>
                 <th>Tél</th>
                 <th>Quartier</th>
-                <th>Demande</th>                        
+                <th>Demande</th>
+                <th style = "text-align: center;">Personnes à charge</th>                        
             </tr>
         </thead>
         <tbody>
@@ -13,6 +14,7 @@
                     <td data-url ='<?php echo site_url("donneur/detailsDemande").'?tel='.$demande['tel']?>'> <?php echo $demande['tel'] ?> </td>
                     <td data-url ='<?php echo site_url("donneur/detailsDemande").'?tel='.$demande['tel']?>'> <?php echo $demande['quartier'].' '.$demande['ville'] ?> </td>
                     <td data-url ='<?php echo site_url("donneur/detailsDemande").'?tel='.$demande['tel']?>'> <?php echo $demande['label'] ?> </td>
+                    <td style = "text-align: center;" data-url ='<?php echo site_url("donneur/detailsDemande").'?tel='.$demande['tel']?>'> <?php echo $demande['nbr_pers_charge'] > 0 ? $demande['nbr_pers_charge'] : 1 ?> </td>
                 </tr>
             <?php } ?>
         </tbody>

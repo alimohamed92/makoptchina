@@ -12,7 +12,7 @@ public function getDemandesSuivies($tel){
     $this->db->select('receveur')->from(TAB_USER_LINK)->where('donneur', $tel);
     $sub_query = $this->db->get_compiled_select();
 
-    $res = $this->db->select('d.label, d.date, d.etat, u.tel, q.nom as quartier, v.nom as ville')
+    $res = $this->db->select('d.label, d.date, d.etat, u.tel, q.nom as quartier, v.nom as ville, u.nbr_pers_charge')
     ->from(TAB_USER.' u, '.TAB_DEMANDE.' d,'.TAB_QUARTIER.' q, '.TAB_VILLE.' v')
     ->where('d.user_tel = u.tel')
     ->where('u.id_quartier = q.id_quartier')

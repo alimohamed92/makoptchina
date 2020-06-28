@@ -93,7 +93,7 @@ class Model_user extends CI_Model
     }
 
     public function getDemandeursParVille($idVille){
-        $res = $this->db->limit(500)->select('d.label, d.date, d.etat, u.tel, q.nom as quartier, v.nom as ville')
+        $res = $this->db->limit(500)->select('d.label, d.date, d.etat, u.tel, q.nom as quartier, v.nom as ville, u.nbr_pers_charge')
         ->from(TAB_USER.' u, '.TAB_DEMANDE.' d,'.TAB_QUARTIER.' q, '.TAB_VILLE.' v')
         ->where('d.user_tel = u.tel')
         ->where('u.id_quartier = q.id_quartier')
@@ -108,7 +108,7 @@ class Model_user extends CI_Model
     }
 
     public function getDemandeursEnAttente($idVille){
-        $res = $this->db->limit(500)->select('d.label, d.date, d.etat, u.tel, q.nom as quartier, v.nom as ville')
+        $res = $this->db->limit(500)->select('d.label, d.date, d.etat, u.tel, q.nom as quartier, v.nom as ville, u.nbr_pers_charge')
         ->from(TAB_USER.' u, '.TAB_DEMANDE.' d,'.TAB_QUARTIER.' q, '.TAB_VILLE.' v')
         ->where('d.user_tel = u.tel')
         ->where('u.id_quartier = q.id_quartier')
@@ -123,7 +123,7 @@ class Model_user extends CI_Model
     }
 
     public function getDemandeursParQuartier($idq){
-        $res = $this->db->select('d.label, d.date, d.etat, u.tel, q.nom as quartier, v.nom as ville')
+        $res = $this->db->select('d.label, d.date, d.etat, u.tel, q.nom as quartier, v.nom as ville, u.nbr_pers_charge')
         ->from(TAB_USER.' u, '.TAB_DEMANDE.' d,'.TAB_QUARTIER.' q, '.TAB_VILLE.' v')
         ->where('d.user_tel = u.tel')
         ->where('u.id_quartier = q.id_quartier')
