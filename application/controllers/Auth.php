@@ -3,7 +3,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 include APPPATH . '/models/VilleModel.php'; 
 include APPPATH . '/models/User.php'; 
-//include APPPATH . '/libraries/Utils.php'; 
+include APPPATH . '/libraries/Utils.php'; 
 
 class Auth extends CI_Controller
 {

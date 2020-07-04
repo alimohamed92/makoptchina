@@ -16,7 +16,7 @@
                     <?php if($article['etat'] == EN_ATTENTE) { echo 'style="background: #ffc10714;" '.'data-toggle="tooltip" data-placement="top" title="en attente de confirmation"';} ?>
                     > <!--style ="background: #dee2e6;"-->
                         <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1"> Demande de <?php echo $article['nom'] ?></h5>
+                            <h5 class="mb-1"> Demande : <?php echo $article['nom'] ?></h5>
                             <!--small class="text-muted"><?php echo explode(" ", $article['date'])[0]?></small-->
                         </div>
                         <p class="mb-1">

@@ -33,8 +33,8 @@ function generateRandomString($length = 10) {
     return $randomString;
 }
 
-function sendSms($to, $message) {
+/*function sendSms($to, $message) {
     return false;
-}
+}*/
 
 ?>
