@@ -22,7 +22,7 @@ public function getNbDonneurs(){
 		
 	$this->db->select('*')
 		->from('user')
-		->where('type = 2');
+		->where('type != 3');
 
 
 	$donneurs = $this->db->get();

@@ -49,7 +49,7 @@ class Auth extends CI_Controller
 						$this->session->set_userdata('log_donneur',true);
 					    redirect(site_url('donneur/'));
 					}
-					else if( $res['type'] == ADMIN){
+					else if( $res['type'] == ADMIN || $res['type'] == ROOT){
 						
 						$this->session->set_userdata('log_admin',true);
 						$this->session->set_userdata('nbUser',$this->user->getNbTotalUser());
@@ -181,7 +181,7 @@ class Auth extends CI_Controller
 		$tel = $this->input->get('tel'); 
 		$user = $this->user->getUserByTel($tel);
 		if($user){
-			$pwd = generateRandomString(15);
+			$pwd = generateRandomString(10);
 			if($this->user->modifierUserPwd($tel,password_hash($pwd, PASSWORD_DEFAULT))){
 				$message = 'Votre nouveau mot de passe temporaire est : <b> '.$pwd;
 				$result = $this->sendSms($tel,$message);

@@ -106,7 +106,7 @@ class Admin extends CI_Controller {
 	{
         $this->checkUserlogged();
         if($this->session->userdata('userInfo')['type'] == ROOT){
-            $res = $this->user->getAllUserVille($this->session->userdata('userInfo')['id_ville']);
+            $res = $this->user->getAllUser();
             $data['title'] = 'Les utilisateurs de la ville de '.$this->session->userdata('userInfo')['ville'];
         }
         else{
