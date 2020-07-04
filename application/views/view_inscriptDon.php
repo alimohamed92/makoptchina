@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <form >
                 <legend class="title green"><b> Inscrivez-vous et faites des dons</b></legend>
                 <div class="form-group">
-                  <input style="height: 50px;" type="tel" name="tel" placeholder="Tél *" id="tel"  class="form-control">
+                  <input style="height: 50px;" type="tel" name="tel" placeholder="Numéro de Tél *" id="tel"  class="form-control">
                 </div>
                 <div class="form-group">
                   <input style="height: 50px;" type="password"  placeholder="Mot de passe *" name="pwd" id="pwd" class="form-control">
@@ -77,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class=" border shadow" style="margin-top : 50px; text-align: center;">
   <footer class=" col-md-12 ">
             <div class="panel panel-body">
-              <p style="margin-top: 15px">&copy; Alhery 2020  </p>
+              <p style="margin-top: 15px">&copy; Alhery 2020  <a style="margin-left: 10px" href ="mailto: contact@ahery.com" class="green">contact@alhery.com</a> </p>
             </div>
   </footer>
 </div>

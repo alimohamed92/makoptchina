@@ -98,7 +98,7 @@ class Model_user extends CI_Model
         ->where('d.user_tel = u.tel')
         ->where('u.id_quartier = q.id_quartier')
         ->where('q.id_ville = v.id_ville')
-        ->where('v.id_ville', $idVille)
+        //->where('v.id_ville', $idVille)
         ->where('u.dt_archive is NULL')
         ->where('d.dt_archive is NULL')
         ->order_by('d.date', 'asc')
