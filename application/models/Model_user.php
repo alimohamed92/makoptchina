@@ -188,6 +188,17 @@ class Model_user extends CI_Model
         return $res;
     }
 
+    public function getAllUser(){
+        $res = $this->db->select('u.tel, q.nom as quartier, v.nom as ville, u.type')
+        ->from(TAB_USER.' u, '.TAB_QUARTIER.' q, '.TAB_VILLE.' v')
+        ->where('u.id_quartier = q.id_quartier')
+        ->where('q.id_ville = v.id_ville')
+        ->where('u.dt_archive is NULL')
+        ->get()
+        ->result_array();
+        return $res;
+    }
+
     public function getUserDemande($tel){
         $res = $this->db->select('d.label, d.date, a.*')
         ->from(TAB_DEMANDE.' d')
