@@ -55,7 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-lg-8 mx-auto text-center">
                         <p class="large text-muted">
                             Née d’un collectif de Nigériens vivant au Niger et à l’extérieur, <b>Alhery</b> est une plateforme d’entraide qui permet de mettre en relation une personne qui veut aider avec une autre qui est dans le besoin, et cela <b>en toute discrétion !</b>
-                            </br> <a href="mailto: contact@ahery.com" class="text-primary">contact@ahery.com</a>
+                            </br> <a href="mailto: contact@alhery.com" class="text-primary">contact@alhery.com</a>
                         </p>
                     </div>
                 </div>
@@ -194,7 +194,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="row align-items-center">
                     <div class="col-lg-4 text-lg-left text-primary">Copyright © Alhery 2020</div>
                     <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-orange btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-orange btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-orange btn-social mx-2 " href="mailto: contact@ahery.com"><i class="far fa-envelope"></i></a>
+                        <a class="btn btn-orange btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-orange btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-orange btn-social mx-2 " href="mailto: contact@alhery.com"><i class="far fa-envelope"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-right"><a class="mr-3 text-primary" href="#" data-toggle="modal" data-target="#exampleModalScrollable">Notre politique de confidentialité</a></div>
                 </div>
@@ -255,7 +255,7 @@ Nous pouvons être amenés à modifier occasionnellement la présente politique 
 
 </br></br><b> 8. Nous contacter </b> </br>
 Pour toute question relative à la présente politique de confidentialité ou pour toute demande relative à vos données personnelles, vous pouvez nous contacter en
-adressant un email à l’adresse <a href ="mailto: contact@ahery.com">contact@alhery.com</a>
+adressant un email à l’adresse <a href ="mailto: contact@alhery.com">contact@alhery.com</a>
 
 
 

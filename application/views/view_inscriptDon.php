@@ -77,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class=" border shadow" style="margin-top : 50px; text-align: center;">
   <footer class=" col-md-12 ">
             <div class="panel panel-body">
-              <p style="margin-top: 15px">&copy; Alhery 2020  <a style="margin-left: 10px" href ="mailto: contact@ahery.com" class="green">contact@alhery.com</a> </p>
+              <p style="margin-top: 15px">&copy; Alhery 2020  <a style="margin-left: 10px" href ="mailto: contact@alhery.com" class="green">contact@alhery.com</a> </p>
             </div>
   </footer>
 </div>
