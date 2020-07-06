@@ -5,7 +5,7 @@ class Model_stat extends CI_Model{
 
 
 public function getNbDemandes(){
-	$this->db->select('SUM(nb_total) as total')
+	$this->db->select('SUM(nb_total -1) as total')
 			 ->from(TAB_DEMANDE);
 	$demandes = $this->db->get();
     return $demandes->result()[0];

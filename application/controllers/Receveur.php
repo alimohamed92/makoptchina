@@ -93,7 +93,7 @@ class Receveur extends CI_Controller {
                     array_push($resArticle,$article);
                 }
             }
-            $this->user->incrementUserDemande($tel);
+            //$this->user->incrementUserDemande($tel);
             echo json_encode($resArticle);
         }
         else {

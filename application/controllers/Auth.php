@@ -133,6 +133,7 @@ class Auth extends CI_Controller
 			if($tmp){
 				if($this->user->getDemandeById($data['tel']) == null){
 					$this->user->addDemande($data['tel'],"Demande");
+					$this->user->incrementUserDemande($data['tel']);
 				}
 				if(array_key_exists("items", $data)){
 					for($i=0; $i < count($data["items"]); $i++){
