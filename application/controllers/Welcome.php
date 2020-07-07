@@ -22,8 +22,9 @@ class Welcome extends CI_Controller {
     {
         parent::__construct();
         $this->load->library('form_validation');
-        $this->load->model('model_stat', 'stat');
-         } 
+		$this->load->model('model_stat', 'stat');
+		$this->load->helper('download');
+    } 
     
 	public function index()
 	{
@@ -32,5 +33,11 @@ class Welcome extends CI_Controller {
 		$donneurs = $this->stat->getNbDonneurs();
 		$this->load->view('welcome_message',  array('demandeurs' => $demandeurs, 'donneurs' => $donneurs ,'demandes' => $demandes, 'dons' => $this->stat->getNbDons()));
 
+	}
+
+	public function file(){
+		$url = $this->input->get('url');
+		force_download($url, NULL);
+		
 	}
 }

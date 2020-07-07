@@ -146,7 +146,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center" style="margin-bottom: 45px">
-                    <h2 class="section-heading text-uppercase green">Comment ça marche ? <i class="fas fa-download"></i></h2>
+                    <h2 class="section-heading text-uppercase green">Comment ça marche ? <a style="color: #0b6868" href = "<?php echo site_url('welcome/file').'?url=./data/FAQ.pdf'?>"><i class="fas fa-download"></i></a></h2>
                 </div>
                 <div class="row text-center">
                     <div class="col-md-4">
