@@ -80,7 +80,7 @@ class Admin extends CI_Controller {
    
         if($articleDemande &&  $this->user->getDemNbArticle($articleDemande['user_tel']) == 0 ){
             $this->user->archiverUserDemande($articleDemande['user_tel']);
-            $this->user->incrementUserDemande($data['tel']);
+            $this->user->incrementUserDemande($articleDemande['user_tel']); 
             $res['demande'] = true;
         }
 

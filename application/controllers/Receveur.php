@@ -48,6 +48,7 @@ class Receveur extends CI_Controller {
    
         if($articleDemande &&  $this->user->getDemNbArticle($articleDemande['user_tel']) == 0 ){
             $this->user->archiverUserDemande($articleDemande['user_tel']);
+            $this->user->incrementUserDemande($articleDemande['user_tel']);
             $res['demande'] = true;
         }
         else if($articleDemande &&  sizeof($this->user->getDemArticleEnAttente($articleDemande['user_tel'])) == 0 ){
